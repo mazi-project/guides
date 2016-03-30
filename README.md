@@ -7,7 +7,7 @@ Here you can find the source files of the documentation, for making any changes 
 Clone the guides repository to your computer
 --------------------------------------------
 
-% git clone git@github.com:mazi-project/guides.git
+	% git clone git@github.com:mazi-project/guides.git
 
 Modify the files
 ----------------
@@ -21,6 +21,6 @@ Build the results
 
 After any changes you make, you need to execute the following command, inside the root folder of the repository, in order to build the source files to html format.
 
-% sphinx-build -b html source/ folder_for_placing_the_html_files/
+	% sphinx-build -b html source/ folder_for_placing_the_html_files/
 
 Then go to the folder where you placed the html files and open the index.html file, to see your changes.
