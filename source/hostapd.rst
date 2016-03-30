@@ -4,6 +4,8 @@
 Install hostapd
 ===============
 
+Install hostapd package
+----------------------
 
 .. code-block:: bash
 
@@ -35,19 +37,18 @@ add these lines of code:
 
 .. note::
    
-   In case your Wi-Fi USB dongle is the TP-Link tl-wn750n model, please go to the following section. If not, please skip the following section (TP-LINK TL-WN720N)
+   In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please go to the following section. If not, please skip the following section (TP-LINK TL-WN725N)
 
 	 
-Only for the TP-LINK TL-WN720N model
+Only for the TP-LINK TL-WN725N model
 ------------------------------------
 		
 follow these steps:
 
 .. code-block:: bash
 
-   sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-v7-20160219.tar.gz
-   sudo tar xzf 8188eu-v7-20160219.tar.gz 
-   sudo vi install.sh
+   sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
+   sudo tar xzf 8188eu-20160219.tar.gz 
    sudo ./install.sh
    sudo reboot 
    

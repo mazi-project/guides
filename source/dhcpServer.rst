@@ -3,10 +3,13 @@
 Install DHCP server
 ===================
 
+Install isc dhcp server package
+-------------------------------
 
 .. code-block:: bash
  
    sudo apt-get install isc-dhcp-server
+
 
 Setup the DHCP server
 ---------------------
