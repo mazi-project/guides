@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install hostapd &mdash; mazi-guides  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mazi-guides  documentation" href="index.html"/>
+        <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
+        <link rel="next" title="Configuration" href="boot.html"/>
+        <link rel="prev" title="Install DHCP server" href="dhcpServer.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> mazi-guides
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dhcpServer.html">Install DHCP server</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Install hostapd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-hostapd-package">Install hostapd package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nitialize-hostapd">Ιnitialize hostapd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#only-for-the-tp-link-tl-wn725n-model">Only for the TP-LINK TL-WN725N model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-the-access-point-by-running-hostapd">Start the access point by running hostapd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-hostapd-in-the-background">Run hostapd in the background</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#download-a-ready-to-go-image">Download a ready-to-go image</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">mazi-guides</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="accessPoint.html">Making a Wi-Fi Access Point</a> &raquo;</li>
+      
+    <li>Install hostapd</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/hostapd.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-hostapd">
+<span id="hostapd"></span><h1>Install hostapd<a class="headerlink" href="#install-hostapd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-hostapd-package">
+<h2>Install hostapd package<a class="headerlink" href="#install-hostapd-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install hostapd
+</pre></div>
+</div>
+</div>
+<div class="section" id="nitialize-hostapd">
+<h2>Ιnitialize hostapd<a class="headerlink" href="#nitialize-hostapd" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hostapd/hostapd.conf
+</pre></div>
+</div>
+<p>add these lines of code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">interface</span><span class="o">=</span>wlan0
+<span class="nv">driver</span><span class="o">=</span>nl80211
+<span class="nv">ssid</span><span class="o">=</span>THE_NAME_OF_YOUR_WIFI_NETWORK
+<span class="nv">hw_mode</span><span class="o">=</span>g
+<span class="nv">channel</span><span class="o">=</span>11
+<span class="nv">wpa</span><span class="o">=</span>1
+<span class="nv">wpa_passphrase</span><span class="o">=</span>SECRETPASSWORD
+<span class="nv">wpa_key_mgmt</span><span class="o">=</span>WPA-PSK
+<span class="nv">wpa_pairwise</span><span class="o">=</span>TKIP CCMP
+<span class="nv">wpa_ptk_rekey</span><span class="o">=</span>600
+<span class="nv">macaddr_acl</span><span class="o">=</span>0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please go to the following section. If not, please skip the following section (TP-LINK TL-WN725N)</p>
+</div>
+</div>
+<div class="section" id="only-for-the-tp-link-tl-wn725n-model">
+<h2>Only for the TP-LINK TL-WN725N model<a class="headerlink" href="#only-for-the-tp-link-tl-wn725n-model" title="Permalink to this headline">¶</a></h2>
+<p>follow these steps:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
+sudo tar xzf 8188eu-20160219.tar.gz
+sudo ./install.sh
+sudo reboot
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-the-access-point-by-running-hostapd">
+<h2>Start the access point by running hostapd<a class="headerlink" href="#start-the-access-point-by-running-hostapd" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
+sudo hostapd -d /etc/hostapd/hostapd.conf
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-hostapd-in-the-background">
+<h2>Run hostapd in the background<a class="headerlink" href="#run-hostapd-in-the-background" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
+sudo hostapd -B /etc/hostapd/hostapd.conf
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the isc –serserver.</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
+sudo ifup wlan0
+sudo service isc-dhcp-server restart
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="boot.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dhcpServer.html" class="btn btn-neutral" title="Install DHCP server" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, MAZI project.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
