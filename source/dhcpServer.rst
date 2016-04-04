@@ -3,7 +3,7 @@
 Install DHCP server
 ===================
 
-Install isc dhcp server package
+Install dnsmasq server package
 -------------------------------
 
 .. code-block:: bash
