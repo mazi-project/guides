@@ -38,56 +38,6 @@ Enable fast CGI for the php
    
    sudo lighty-enable-mod fastcgi-php
    sudo servive lighttpd force-reload
-
-Configuring Networking
-----------------------
-
-Edit the file Hostapd
-
-.. code-block:: bash
-
-   sudo nano /etc/default/hostapd
-   #Uncomment the line 
-       DEAMON_CONF=""
-   #AND ADD
-       /etc/hostapd/hostapd.conf
-
-
-We have to configure the DHCP server
-
-.. code-block:: bash
-
-   sudo apt-get install dnsmasq
-
-We set the range of the IPs that will be assigned to the clients
-
-.. code-block:: bash
-  
-    sudo nano/etc/dnsmasq.conf
-   
-    # ADD THE FOLLOWING LINES
-    interface=wlan0
-    dhcp-range=192.168.1.1,192.168.1.200,255.255.255.0,12h
-    address=/#/192.168.1.1    #redirect all DNS requests to 192.168.1.1
-
-
-Edit the file Hosts
-
-.. code-block:: bash
-
-   sudo nano /etc/hosts
-
-   #ADD THE FOLLOWING LINE AT THE BOTTOM
-   192.168.1.1     eins 
-
-
-And type :
-
-.. code-block:: bash
-
-   sudo service hostapd start
-   sudo service dnsmasq restart
-   sudo reboot 
    
 Replace the placeholder page
 ----------------------------

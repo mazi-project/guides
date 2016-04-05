@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuration Captive Portal &mdash; mazi-guides  documentation</title>
+  <title>Install DNSMASQ &mdash; mazi-guides  documentation</title>
   
 
   
@@ -33,7 +33,9 @@
 
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
-        <link rel="prev" title="Download image" href="download.html"/> 
+        <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
+        <link rel="next" title="Configuration" href="boot.html"/>
+        <link rel="prev" title="Install hostapd" href="hostapd.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -78,16 +80,24 @@
           
             
             
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Configuration Captive Portal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-lighttpd">Install lighttpd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tweak-permission">Tweak Permission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#replace-the-placeholder-page">Replace the placeholder page</a></li>
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dhcpServer.html">Install DHCP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hostapd.html">Install hostapd</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Install DNSMASQ</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#download-a-ready-to-go-image">Download a ready-to-go image</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
 </ul>
 
             
@@ -118,11 +128,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Configuration Captive Portal</li>
+          <li><a href="accessPoint.html">Making a Wi-Fi Access Point</a> &raquo;</li>
+      
+    <li>Install DNSMASQ</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/captive.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/dnsmasq.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -132,42 +144,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="configuration-captive-portal">
-<span id="captive"></span><h1>Configuration Captive Portal<a class="headerlink" href="#configuration-captive-portal" title="Permalink to this headline">¶</a></h1>
-<p>Firstly, you need configure raspberry pi as access point <a class="reference internal" href="accessPoint.html#accesspoint"><span>Making a Wi-Fi Access Point</span></a></p>
-<div class="section" id="install-lighttpd">
-<h2>Install lighttpd<a class="headerlink" href="#install-lighttpd" title="Permalink to this headline">¶</a></h2>
-<p>Lighttpd is a lightweight web server application that works well on the Pi. It can be installed using the following commands :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install lighttpd
-sudo apt-get install php5-common php5-cgi php5
+  <div class="section" id="install-dnsmasq">
+<span id="dnsmasq"></span><h1>Install DNSMASQ<a class="headerlink" href="#install-dnsmasq" title="Permalink to this headline">¶</a></h1>
+<p>We have to configure the DHCP server</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install dnsmasq
 </pre></div>
 </div>
-</div>
-<div class="section" id="tweak-permission">
-<h2>Tweak Permission<a class="headerlink" href="#tweak-permission" title="Permalink to this headline">¶</a></h2>
-<p>Now we will adjust some permissions to ensure the “Pi” user account can write files to the location where Lighttpd expects to find web pages. The /var/www directory is currently owned by the “root” user. So let’s make the “www-data” user and group the owner of the /var/www directory</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo chown www-data:www-data /var/www
-sudo chmod <span class="m">775</span> /var/www
-sudo usermod -a -G www-data pi
+<p>We set the range of the IPs that will be assigned to the clients</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano/etc/dnsmasq.conf
+
+<span class="c1"># ADD THE FOLLOWING LINES</span>
+<span class="nv">interface</span><span class="o">=</span>wlan0
+dhcp-range<span class="o">=</span>192.168.1.1,192.168.1.200,255.255.255.0,12h
+<span class="nv">address</span><span class="o">=</span>/#/192.168.1.1    <span class="c1">#redirect all DNS requests to 192.168.1.1</span>
 </pre></div>
 </div>
-<p>Enable fast CGI for the php</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo lighty-enable-mod fastcgi-php
-sudo servive lighttpd force-reload
+<p>Edit the file Hosts</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hosts
+
+<span class="c1">#ADD THE FOLLOWING LINE AT THE BOTTOM</span>
+192.168.1.1     eins
 </pre></div>
 </div>
-</div>
-<div class="section" id="replace-the-placeholder-page">
-<h2>Replace the placeholder page<a class="headerlink" href="#replace-the-placeholder-page" title="Permalink to this headline">¶</a></h2>
-<p>Let’s browse to the /var/www directory and rename this default page :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /var/www/html
-mv index.lighttpd.html index.lighttpd.hxxx
+<p>And type :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service hostapd start
+sudo service dnsmasq restart
+sudo reboot
 </pre></div>
-</div>
-<p>Now you can add you site or edit the index.html in /var/www/html</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>wget /path of your page/
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -178,8 +181,10 @@ mv index.lighttpd.html index.lighttpd.hxxx
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="boot.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="download.html" class="btn btn-neutral" title="Download image" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="hostapd.html" class="btn btn-neutral" title="Install hostapd" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
