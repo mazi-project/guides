@@ -6,14 +6,14 @@ Making a Wi-Fi Access Point
 What you will need
 ------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    required
 
 Installation
 ------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 0
 
    image
    writingSD
@@ -23,14 +23,14 @@ Installation
 Initial setup
 -------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    setup
 
 Installing DHCP server and Hostapd
 ----------------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    dhcpServer
    hostapd
@@ -39,14 +39,14 @@ Installing DHCP server and Hostapd
 Start everything at boot
 ------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    boot
 
 Download a ready-to-go image
 ----------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    download
 

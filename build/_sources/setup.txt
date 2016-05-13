@@ -1,7 +1,7 @@
 .. _setup :
 
 Setup
-=====
+-----
 
 Once you succesfully log in the Raspberry, start the rasbian configuration tool:
 
@@ -42,8 +42,8 @@ Update repositories
 
    sudo apt-get update
 
-Assign a static ip addres to wlan0
-----------------------------------
+Assign a static ip address to wlan0
+-----------------------------------
 
 .. code-block:: bash
 

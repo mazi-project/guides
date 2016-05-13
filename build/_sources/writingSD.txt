@@ -6,13 +6,15 @@ Writing an image to the SD card
 
 You need to use an image writing tool to install it on your SD card.
 
-For Linux
----------
-Coming soon...
+
+**For Linux**
+
+ 
+ Coming soon...
 
 
-For Windows
-------------
+**For Windows**
+
 
 Download |win32| application for flashing the SD card
 
@@ -20,19 +22,19 @@ Download |win32| application for flashing the SD card
 
    <a href="http://sourceforge.net/projects/win32diskimager" target="_blank">Win32</a>
 
-1 Select your device (SD card)
-++++++++++++++++++++++++++++++                          
+**1. Select your device (SD card)**
+                      
 
 .. image:: _static/photo1.png
 
-2 Locate the downloaded disk image
-++++++++++++++++++++++++++++++++++
+**2. Locate the downloaded disk image**
+
 
 .. image:: _static/photo2.png
 
 
-3 Click *Write* and wait for the write to comlete
-+++++++++++++++++++++++++++++++++++++++++++++++++
+**3. Click *Write* and wait for the write to be comleted**
+
 
 .. image:: _static/photo3.png
 

@@ -155,7 +155,7 @@
 
 <span class="c1"># ADD THE FOLLOWING LINES</span>
 <span class="nv">interface</span><span class="o">=</span>wlan0
-dhcp-range<span class="o">=</span>192.168.1.1,192.168.1.200,255.255.255.0,12h
+dhcp-range<span class="o">=</span>192.168.1.10,192.168.1.200,255.255.255.0,12h
 <span class="nv">address</span><span class="o">=</span>/#/192.168.1.1    <span class="c1">#redirect all DNS requests to 192.168.1.1</span>
 </pre></div>
 </div>
@@ -163,7 +163,7 @@ dhcp-range<span class="o">=</span>192.168.1.1,192.168.1.200,255.255.255.0,12h
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hosts
 
 <span class="c1">#ADD THE FOLLOWING LINE AT THE BOTTOM</span>
-192.168.1.1     eins
+192.168.1.1     mazizone
 </pre></div>
 </div>
 <p>And type :</p>

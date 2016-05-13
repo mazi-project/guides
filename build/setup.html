@@ -85,13 +85,11 @@
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#change-the-root-password">Change the root password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#update-repositories">Update repositories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#assign-a-static-ip-addres-to-wlan0">Assign a static ip addres to wlan0</a></li>
-</ul>
-</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-the-root-password">Change the root password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-repositories">Update repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assign-a-static-ip-address-to-wlan0">Assign a static ip address to wlan0</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a></li>
@@ -101,7 +99,7 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="captive.html">Captiive Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
 </ul>
 
             
@@ -169,26 +167,27 @@
 <li>Change the hostname</li>
 </ol>
 </div></blockquote>
+</div>
 <div class="section" id="change-the-root-password">
-<h2>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h2>
+<h1>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-the-password-of-the-pi-user">
-<h2>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h2>
+<h1>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-repositories">
-<h2>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h2>
+<h1>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
 </pre></div>
 </div>
 </div>
-<div class="section" id="assign-a-static-ip-addres-to-wlan0">
-<h2>Assign a static ip addres to wlan0<a class="headerlink" href="#assign-a-static-ip-addres-to-wlan0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="assign-a-static-ip-address-to-wlan0">
+<h1>Assign a static ip address to wlan0<a class="headerlink" href="#assign-a-static-ip-address-to-wlan0" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/network/interfaces
 </pre></div>
 </div>
@@ -201,7 +200,6 @@ iface wlan0 inet static
    netmask 255.255.255.0
    gateway 192.168.1.1
 </pre></div>
-</div>
 </div>
 </div>
 

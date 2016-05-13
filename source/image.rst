@@ -11,7 +11,7 @@ from the Raspberry Pi website: |download-page|
    <a href="http://raspberrypi.org/downloads" target="_blank">Download page</a>
 
 Alternative distributions are available from third party vendors.
-After downloading the .zip file, unzip it to get the image file (.img) for writing to your
+After downloading the .zip file, unzip it to get the image file (.img) for writing it to your
 SD card.
 
 .. note::

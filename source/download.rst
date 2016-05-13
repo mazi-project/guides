@@ -1,7 +1,7 @@
 .. _download :
 
-Download image
-==============
+Download the image
+==================
 
 You can download an |image| with all the above configuration pre-installed and load it on your SD card.
 

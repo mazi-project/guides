@@ -10,7 +10,7 @@ Welcome to mazi-guides!
 Making a Wi-Fi Access Point 
 ---------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    
    
    accessPoint
