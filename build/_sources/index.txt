@@ -6,6 +6,13 @@
 Welcome to mazi-guides!
 =======================
 
+Download MAZI images
+--------------------
+.. toctree::
+   :maxdepth: 1
+
+   download
+
 
 Making a Wi-Fi Access Point 
 ---------------------------

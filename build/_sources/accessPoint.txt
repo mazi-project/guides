@@ -42,12 +42,3 @@ Start everything at boot
    :maxdepth: 1
 
    boot
-
-Download a ready-to-go image
-----------------------------
-.. toctree::
-   :maxdepth: 1
-
-   download
-
-
