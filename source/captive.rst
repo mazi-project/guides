@@ -42,14 +42,16 @@ Installing a web server
 Replace the placeholder page
 ----------------------------
 
-Let’s browse to the /var/www/html directory and rename this default page:
+Let’s browse to the /var/www/html directory and rename the default page:
 
 .. code-block:: bash
   
    cd /var/www/html/
    mv index.html index.html.old
 
-Now you can add you site and edit the index.html in /var/www/
+Now you can make a new folder and add your site in it.
+
+Then you should make a new index.html file inside the folder /var/www/html for redirecting all requests to your site.
 
 .. code-block:: bash
 
