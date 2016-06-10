@@ -122,7 +122,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -149,27 +149,27 @@
   <div class="section" id="install-dnsmasq">
 <span id="dnsmasq"></span><h1>Install DNSMASQ<a class="headerlink" href="#install-dnsmasq" title="Permalink to this headline">¶</a></h1>
 <p>We have to configure the DHCP server</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install dnsmasq
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install dnsmasq
 </pre></div>
 </div>
 <p>We set the range of the IPs that will be assigned to the clients</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano/etc/dnsmasq.conf
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano/etc/dnsmasq.conf
 
-<span class="c1"># ADD THE FOLLOWING LINES</span>
+<span class="c"># ADD THE FOLLOWING LINES</span>
 <span class="nv">interface</span><span class="o">=</span>wlan0
 dhcp-range<span class="o">=</span>192.168.1.10,192.168.1.200,255.255.255.0,12h
-<span class="nv">address</span><span class="o">=</span>/#/192.168.1.1    <span class="c1">#redirect all DNS requests to 192.168.1.1</span>
+<span class="nv">address</span><span class="o">=</span>/#/192.168.1.1    <span class="c">#redirect all DNS requests to 192.168.1.1</span>
 </pre></div>
 </div>
 <p>Edit the file Hosts</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hosts
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/hosts
 
-<span class="c1">#ADD THE FOLLOWING LINE AT THE BOTTOM</span>
+<span class="c">#ADD THE FOLLOWING LINE AT THE BOTTOM</span>
 192.168.1.1     mazizone
 </pre></div>
 </div>
 <p>And type :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service hostapd start
+<div class="highlight-bash"><div class="highlight"><pre>sudo service hostapd start
 sudo service dnsmasq restart
 sudo reboot
 </pre></div>

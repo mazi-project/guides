@@ -86,8 +86,8 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Configuration Captive Portal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-lighttpd">Install lighttpd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tweak-permission">Tweak Permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-dnsmasq">Configure dnsmasq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-a-web-server">Installing a web server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#replace-the-placeholder-page">Replace the placeholder page</a></li>
 </ul>
 </li>
@@ -113,7 +113,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -138,37 +138,54 @@
   <div class="section" id="configuration-captive-portal">
 <span id="captive"></span><h1>Configuration Captive Portal<a class="headerlink" href="#configuration-captive-portal" title="Permalink to this headline">¶</a></h1>
 <p>Firstly, you need to configure raspberry pi as access point <a class="reference internal" href="accessPoint.html#accesspoint"><span>Making a Wi-Fi Access Point</span></a></p>
-<div class="section" id="install-lighttpd">
-<h2>Install lighttpd<a class="headerlink" href="#install-lighttpd" title="Permalink to this headline">¶</a></h2>
-<p>Lighttpd is a lightweight web server application that works well on the Pi. It can be installed using the following commands :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install lighttpd
-sudo apt-get install php5-common php5-cgi php5
+<div class="section" id="configure-dnsmasq">
+<h2>Configure dnsmasq<a class="headerlink" href="#configure-dnsmasq" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/dnsmasq.conf
+</pre></div>
+</div>
+<p>Add the following line:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">address</span><span class="o">=</span>/#/192.168.1.1 <span class="c">#redirect all DNS requests to 192.168.1.1</span>
+</pre></div>
+</div>
+<p>Your final dnsmasq configuration file should include the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># MAZI configuration</span>
+<span class="nv">interface</span><span class="o">=</span>wlan0
+dhcp-range<span class="o">=</span>192.168.1.10,192.168.1.200,255.255.255.0,12h
+<span class="nv">address</span><span class="o">=</span>/#/192.168.1.1 <span class="c">#redirect all DNS requests to 192.168.1.1</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="tweak-permission">
-<h2>Tweak Permission<a class="headerlink" href="#tweak-permission" title="Permalink to this headline">¶</a></h2>
-<p>Now we will adjust some permissions to ensure the “Pi” user account can write files to the location where Lighttpd expects to find web pages. The /var/www directory is currently owned by the “root” user. So let’s make the “www-data” user and group the owner of the /var/www directory</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo chown www-data:www-data /var/www
-sudo chmod <span class="m">775</span> /var/www
-sudo usermod -a -G www-data pi
-</pre></div>
-</div>
-<p>Enable fast CGI for the php</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo lighty-enable-mod fastcgi-php
-sudo servive lighttpd force-reload
+<div class="section" id="installing-a-web-server">
+<h2>Installing a web server<a class="headerlink" href="#installing-a-web-server" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install apache2
 </pre></div>
 </div>
 </div>
 <div class="section" id="replace-the-placeholder-page">
 <h2>Replace the placeholder page<a class="headerlink" href="#replace-the-placeholder-page" title="Permalink to this headline">¶</a></h2>
-<p>Let’s browse to the /var/www directory and rename this default page :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /var/www/html
-mv index.lighttpd.html index.lighttpd.hxxx
+<p>Let’s browse to the /var/www/html directory and rename the default page:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /var/www/html/
+mv index.html index.html.old
 </pre></div>
 </div>
-<p>Now you can add you site or edit the index.html in /var/www/html</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>wget /path of your page/
+<p>Now you can make a new folder and add your site in it.</p>
+<p>Then you should make a new index.html file inside the folder /var/www/html for redirecting all requests to your site.</p>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir your-new-page/
+sudo nano index.html
+</pre></div>
+</div>
+<p>Paste the following</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+       <span class="nt">&lt;head&gt;</span>
+               <span class="nt">&lt;meta</span> <span class="na">HTTP-EQUIV=</span><span class="s">&quot;REFRESH&quot;</span> <span class="na">content=</span><span class="s">&quot;0; url=http://localhost/your-new-page&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;/head&gt;</span>
+       <span class="nt">&lt;body&gt;</span>
+       <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>Restart apache web server</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo service apache2 restart
 </pre></div>
 </div>
 </div>

@@ -6,8 +6,16 @@
 Welcome to mazi-guides!
 =======================
 
+This tutorial aims at helping advanced MAZI toolkit owners to understand and make by themselves various software/network configurations in order to deploy a Mazizone.
+
+Moreover, a novice MAZI toolkit owner can simply download a ready-to-go SD card image and deploy a Mazizone.
+
+
 Download MAZI images
 --------------------
+
+In this section, you can find links with SD card images with all the configurations pre-installed.
+
 .. toctree::
    :maxdepth: 1
 

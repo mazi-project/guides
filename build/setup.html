@@ -124,7 +124,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -151,7 +151,7 @@
   <div class="section" id="setup">
 <span id="id1"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
 <p>Once you succesfully log in the Raspberry, start the rasbian configuration tool:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo raspi-config
+<div class="highlight-bash"><div class="highlight"><pre>sudo raspi-config
 </pre></div>
 </div>
 <p><strong>Re-size to file-system to use the entire SD card</strong></p>
@@ -172,29 +172,29 @@
 </div>
 <div class="section" id="change-the-root-password">
 <h1>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo passwd
+<div class="highlight-bash"><div class="highlight"><pre>sudo passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-the-password-of-the-pi-user">
 <h1>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>passwd
+<div class="highlight-bash"><div class="highlight"><pre>passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-repositories">
 <h1>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get update
 </pre></div>
 </div>
 </div>
 <div class="section" id="assign-a-static-ip-address-to-wlan0">
 <h1>Assign a static ip address to wlan0<a class="headerlink" href="#assign-a-static-ip-address-to-wlan0" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/network/interfaces
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/network/interfaces
 </pre></div>
 </div>
 <p>set the following lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># for Internet Connection Sharing</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># for Internet Connection Sharing</span>
 auto wlan0
 
 iface wlan0 inet static
