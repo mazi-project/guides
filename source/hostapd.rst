@@ -33,25 +33,7 @@ add these lines of code:
    wpa_key_mgmt=WPA-PSK
    wpa_pairwise=TKIP CCMP
    wpa_ptk_rekey=600
-   macaddr_acl=0
-
-.. note::
-   
-   In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please go to the following section. If not, please skip the following section (TP-LINK TL-WN725N)
-
-	 
-Only for the TP-LINK TL-WN725N model
-------------------------------------
-		
-follow these steps:
-
-.. code-block:: bash
-
-   sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
-   sudo tar xzf 8188eu-20160219.tar.gz 
-   sudo ./install.sh
-   sudo reboot 
-   
+   macaddr_acl=0   
 
 
 Start the access point by running hostapd

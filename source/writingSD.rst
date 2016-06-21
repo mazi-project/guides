@@ -1,8 +1,9 @@
 .. _writingSD :
 
 
+
 Writing an image to the SD card
-===============================
+-------------------------------
 
 You need to use an image writing tool to install it on your SD card.
 

@@ -1,9 +1,18 @@
 .. _required:
 
+Raspberry pi
+------------
+The Raspberry Pi is a low cost, credit-card sized computer that plugs into a 
+computer monitor or TV, and uses a standard keyboard and mouse
+
+.. image:: _static/raspberry.png
+
+
+
 SD Card
 -------
 
-We recommend a 16GB SD card.
+We recommend a 8GB or 16GB SD card.
 
 
 Display and connectivity cables
@@ -23,8 +32,8 @@ Power supply
 ------------
 
 Use a 5V micro USB power supply to power your Raspberry Pi. Be 
-careful that whatever power supply you use outputs at least 5V; 
-insufficient power will cause your Pi to behave in strange ways.
+careful that whatever power supply you use outputs at least 5V. 
+Insufficient power will cause your Pi to behave in strange ways.
 
 Internet connection
 -------------------

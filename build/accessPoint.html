@@ -33,7 +33,7 @@
 
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
-        <link rel="next" title="SD Card" href="required.html"/>
+        <link rel="next" title="Raspberry pi" href="required.html"/>
         <link rel="prev" title="Download the image" href="download.html"/> 
 
   
@@ -85,7 +85,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Making a Wi-Fi Access Point</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-you-will-need">What you will need</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="required.html">SD Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="required.html">Raspberry pi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="required.html#sd-card">SD Card</a></li>
 <li class="toctree-l3"><a class="reference internal" href="required.html#display-and-connectivity-cables">Display and connectivity cables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="required.html#keyboard">Keyboard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="required.html#power-supply">Power supply</a></li>
@@ -93,7 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="required.html#usb-wi-fi-dongle">USB Wi-Fi dongle</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="image.html">Download the image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writingSD.html">Writing an image to the SD card</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plugging.html">Plugging in your Raspberry Pi</a></li>
@@ -106,12 +107,12 @@
 <li class="toctree-l3"><a class="reference internal" href="setup.html#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup.html#update-repositories">Update repositories</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup.html#assign-a-static-ip-address-to-wlan0">Assign a static ip address to wlan0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup.html#tp-link-tl-wn725n-model">TP-LINK TL-WN725N model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dhcpServer.html">Install DHCP server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hostapd.html">Install hostapd</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#start-everything-at-boot">Start everything at boot</a><ul>
@@ -145,7 +146,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -173,7 +174,8 @@
 <h2>What you will need<a class="headerlink" href="#what-you-will-need" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="required.html">SD Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="required.html">Raspberry pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="required.html#sd-card">SD Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="required.html#display-and-connectivity-cables">Display and connectivity cables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="required.html#keyboard">Keyboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="required.html#power-supply">Power supply</a></li>
@@ -183,7 +185,7 @@
 </div>
 </div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="image.html">Download the image</a></li>
@@ -202,16 +204,16 @@
 <li class="toctree-l1"><a class="reference internal" href="setup.html#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html#update-repositories">Update repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html#assign-a-static-ip-address-to-wlan0">Assign a static ip address to wlan0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html#tp-link-tl-wn725n-model">TP-LINK TL-WN725N model</a></li>
 </ul>
 </div>
 </div>
-<div class="section" id="installing-dhcp-server-and-hostapd">
-<h2>Installing DHCP server and Hostapd<a class="headerlink" href="#installing-dhcp-server-and-hostapd" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-dnsmasq-server-and-hostapd">
+<h2>Installing DNSMASQ server and Hostapd<a class="headerlink" href="#installing-dnsmasq-server-and-hostapd" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dhcpServer.html">Install DHCP server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hostapd.html">Install hostapd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ</a></li>
 </ul>
 </div>
 </div>
@@ -232,7 +234,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="required.html" class="btn btn-neutral float-right" title="SD Card" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="required.html" class="btn btn-neutral float-right" title="Raspberry pi" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="download.html" class="btn btn-neutral" title="Download the image" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

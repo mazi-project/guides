@@ -32,10 +32,7 @@
   
 
   
-    <link rel="top" title="mazi-guides  documentation" href="index.html"/>
-        <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
-        <link rel="next" title="Install hostapd" href="hostapd.html"/>
-        <link rel="prev" title="Setup" href="setup.html"/> 
+    <link rel="top" title="mazi-guides  documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,29 +80,8 @@
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download the image</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Install DHCP server</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#install-isc-dhcp-server-package">Install isc dhcp server package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#setup-the-dhcp-server">Setup the DHCP server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bring-up-the-interface">Bring up the interface</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#restart-the-dhcp-server">Restart the DHCP server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#turn-on-ip-forwarding">Turn on IP forwarding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-a-routing-rule-for-forwarding-internet">Add a routing rule for forwarding internet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configure-isc-dhcp-server">Configure isc-dhcp-server</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="hostapd.html">Install hostapd</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
@@ -131,15 +107,13 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
-      
-          <li><a href="accessPoint.html">Making a Wi-Fi Access Point</a> &raquo;</li>
       
     <li>Install DHCP server</li>
       <li class="wy-breadcrumbs-aside">
@@ -159,17 +133,17 @@
 <span id="dhcpserver"></span><h1>Install DHCP server<a class="headerlink" href="#install-dhcp-server" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-isc-dhcp-server-package">
 <h2>Install isc dhcp server package<a class="headerlink" href="#install-isc-dhcp-server-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install isc-dhcp-server
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install isc-dhcp-server
 </pre></div>
 </div>
 </div>
 <div class="section" id="setup-the-dhcp-server">
 <h2>Setup the DHCP server<a class="headerlink" href="#setup-the-dhcp-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/dhcp/dhcpd.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/dhcp/dhcpd.conf
 </pre></div>
 </div>
 <p>add these lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre>subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
    range 192.168.1.10 192.168.1.200<span class="p">;</span>
    option domain-name-servers 192.168.1.1<span class="p">;</span>
    option routers 192.168.1.1<span class="p">;</span>
@@ -180,43 +154,43 @@
 </div>
 <div class="section" id="bring-up-the-interface">
 <h2>Bring up the interface<a class="headerlink" href="#bring-up-the-interface" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo ifconfig wlan0 192.168.1.1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifconfig wlan0 192.168.1.1
 </pre></div>
 </div>
 </div>
 <div class="section" id="restart-the-dhcp-server">
 <h2>Restart the DHCP server<a class="headerlink" href="#restart-the-dhcp-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo service isc-dhcp-server restart
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service isc-dhcp-server restart
 </pre></div>
 </div>
 </div>
 <div class="section" id="turn-on-ip-forwarding">
 <h2>Turn on IP forwarding<a class="headerlink" href="#turn-on-ip-forwarding" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-a-routing-rule-for-forwarding-internet">
 <h2>Add a routing rule for forwarding internet<a class="headerlink" href="#add-a-routing-rule-for-forwarding-internet" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </pre></div>
 </div>
 </div>
 <div class="section" id="configure-isc-dhcp-server">
 <h2>Configure isc-dhcp-server<a class="headerlink" href="#configure-isc-dhcp-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/default/isc-dhcp-server
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/default/isc-dhcp-server
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li>uncomment the line DHCP_CONF=/etc/dhcp/dhcp.conf (remove the #)</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">DHCP_CONF</span><span class="o">=</span>/etc/dhcp/dhcp.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">DHCP_CONF</span><span class="o">=</span>/etc/dhcp/dhcp.conf
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>fill in the interface wlan0, in the last line</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">INTERFACES</span><span class="o">=</span><span class="s2">&quot;wlan0&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">INTERFACES</span><span class="o">=</span><span class="s2">&quot;wlan0&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -226,15 +200,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="hostapd.html" class="btn btn-neutral float-right" title="Install hostapd" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="setup.html" class="btn btn-neutral" title="Setup" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -10,10 +10,10 @@ What you will need
 
    required
 
-Installation
+installation
 ------------
 .. toctree::
-   :maxdepth: 0
+   :maxdepth: 1
 
    image
    writingSD
@@ -27,14 +27,13 @@ Initial setup
 
    setup
 
-Installing DHCP server and Hostapd
+Installing DNSMASQ server and Hostapd
 ----------------------------------
 .. toctree::
    :maxdepth: 1
 
-   dhcpServer
-   hostapd
-   dnsmasq   
+   dnsmasq
+   hostapd   
 
 Start everything at boot
 ------------------------

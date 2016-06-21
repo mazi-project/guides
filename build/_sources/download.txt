@@ -3,9 +3,8 @@
 Download the image
 ==================
 
-You can download an |image| with all the above configuration pre-installed and load it on your SD card.
+You can download a **Wi-Fi Access Point** or **Captive Portal**  |image| and load it on your SD card.
 
-Your Wi-Fi Access Point is ready!
 
 .. note::
 	SSID: mazizone

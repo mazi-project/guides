@@ -34,7 +34,7 @@
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
         <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
-        <link rel="next" title="Install DHCP server" href="dhcpServer.html"/>
+        <link rel="next" title="Install DNSMASQ server" href="dnsmasq.html"/>
         <link rel="prev" title="Logging into your Raspberry Pi" href="logging.html"/> 
 
   
@@ -86,16 +86,17 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">installation</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#change-the-root-password">Change the root password</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#update-repositories">Update repositories</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#assign-a-static-ip-address-to-wlan0">Assign a static ip address to wlan0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tp-link-tl-wn725n-model">TP-LINK TL-WN725N model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
 </ul>
 </li>
@@ -124,7 +125,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -151,7 +152,7 @@
   <div class="section" id="setup">
 <span id="id1"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
 <p>Once you succesfully log in the Raspberry, start the rasbian configuration tool:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo raspi-config
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo raspi-config
 </pre></div>
 </div>
 <p><strong>Re-size to file-system to use the entire SD card</strong></p>
@@ -172,35 +173,45 @@
 </div>
 <div class="section" id="change-the-root-password">
 <h1>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo passwd
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-the-password-of-the-pi-user">
 <h1>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>passwd
+<div class="highlight-bash"><div class="highlight"><pre><span></span>passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-repositories">
 <h1>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get update
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
 </pre></div>
 </div>
 </div>
 <div class="section" id="assign-a-static-ip-address-to-wlan0">
 <h1>Assign a static ip address to wlan0<a class="headerlink" href="#assign-a-static-ip-address-to-wlan0" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/network/interfaces
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/network/interfaces
 </pre></div>
 </div>
 <p>set the following lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># for Internet Connection Sharing</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># for Internet Connection Sharing</span>
 auto wlan0
 
 iface wlan0 inet static
    address 192.168.1.1
    netmask 255.255.255.0
    gateway 192.168.1.1
+</pre></div>
+</div>
+</div>
+<div class="section" id="tp-link-tl-wn725n-model">
+<h1>TP-LINK TL-WN725N model<a class="headerlink" href="#tp-link-tl-wn725n-model" title="Permalink to this headline">¶</a></h1>
+<p>In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please follow these steps:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
+sudo tar xzf 8188eu-20160219.tar.gz
+sudo ./install.sh
+sudo reboot
 </pre></div>
 </div>
 </div>
@@ -212,7 +223,7 @@ iface wlan0 inet static
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dhcpServer.html" class="btn btn-neutral float-right" title="Install DHCP server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dnsmasq.html" class="btn btn-neutral float-right" title="Install DNSMASQ server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="logging.html" class="btn btn-neutral" title="Logging into your Raspberry Pi" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

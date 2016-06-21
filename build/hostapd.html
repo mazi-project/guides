@@ -34,8 +34,8 @@
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
         <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
-        <link rel="next" title="Install DNSMASQ" href="dnsmasq.html"/>
-        <link rel="prev" title="Install DHCP server" href="dhcpServer.html"/> 
+        <link rel="next" title="Configuration" href="boot.html"/>
+        <link rel="prev" title="Install DNSMASQ server" href="dnsmasq.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -86,19 +86,17 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#installing-dhcp-server-and-hostapd">Installing DHCP server and Hostapd</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="dhcpServer.html">Install DHCP server</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ server</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Install hostapd</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#install-hostapd-package">Install hostapd package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#nitialize-hostapd">Ιnitialize hostapd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#only-for-the-tp-link-tl-wn725n-model">Only for the TP-LINK TL-WN725N model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#start-the-access-point-by-running-hostapd">Start the access point by running hostapd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-hostapd-in-the-background">Run hostapd in the background</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="dnsmasq.html">Install DNSMASQ</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
@@ -129,7 +127,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -157,17 +155,17 @@
 <span id="hostapd"></span><h1>Install hostapd<a class="headerlink" href="#install-hostapd" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-hostapd-package">
 <h2>Install hostapd package<a class="headerlink" href="#install-hostapd-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install hostapd
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install hostapd
 </pre></div>
 </div>
 </div>
 <div class="section" id="nitialize-hostapd">
 <h2>Ιnitialize hostapd<a class="headerlink" href="#nitialize-hostapd" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/hostapd/hostapd.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hostapd/hostapd.conf
 </pre></div>
 </div>
 <p>add these lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">interface</span><span class="o">=</span>wlan0
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">interface</span><span class="o">=</span>wlan0
 <span class="nv">driver</span><span class="o">=</span>nl80211
 <span class="nv">ssid</span><span class="o">=</span>THE_NAME_OF_YOUR_WIFI_NETWORK
 <span class="nv">hw_mode</span><span class="o">=</span>g
@@ -180,31 +178,17 @@
 <span class="nv">macaddr_acl</span><span class="o">=</span>0
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please go to the following section. If not, please skip the following section (TP-LINK TL-WN725N)</p>
-</div>
-</div>
-<div class="section" id="only-for-the-tp-link-tl-wn725n-model">
-<h2>Only for the TP-LINK TL-WN725N model<a class="headerlink" href="#only-for-the-tp-link-tl-wn725n-model" title="Permalink to this headline">¶</a></h2>
-<p>follow these steps:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
-sudo tar xzf 8188eu-20160219.tar.gz
-sudo ./install.sh
-sudo reboot
-</pre></div>
-</div>
 </div>
 <div class="section" id="start-the-access-point-by-running-hostapd">
 <h2>Start the access point by running hostapd<a class="headerlink" href="#start-the-access-point-by-running-hostapd" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo ifdown wlan0
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
 sudo hostapd -d /etc/hostapd/hostapd.conf
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-hostapd-in-the-background">
 <h2>Run hostapd in the background<a class="headerlink" href="#run-hostapd-in-the-background" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo ifdown wlan0
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
 sudo hostapd -B /etc/hostapd/hostapd.conf
 </pre></div>
 </div>
@@ -212,7 +196,7 @@ sudo hostapd -B /etc/hostapd/hostapd.conf
 <p class="first admonition-title">Note</p>
 <p class="last">In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the isc –serserver.</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre>sudo ifdown wlan0
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
 sudo ifup wlan0
 sudo service isc-dhcp-server restart
 </pre></div>
@@ -227,10 +211,10 @@ sudo service isc-dhcp-server restart
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dnsmasq.html" class="btn btn-neutral float-right" title="Install DNSMASQ" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="boot.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dhcpServer.html" class="btn btn-neutral" title="Install DHCP server" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dnsmasq.html" class="btn btn-neutral" title="Install DNSMASQ server" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

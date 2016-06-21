@@ -1,7 +1,9 @@
 .. _image :
 
+
+
 Download the image
-==================
+------------------
 
 Official images for recommended Operating Systems are available to download
 from the Raspberry Pi website: |download-page|

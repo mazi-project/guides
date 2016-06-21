@@ -1,17 +1,20 @@
 .. _dnsmasq :
 
 
-Install DNSMASQ
-===============
+Install DNSMASQ server
+======================
 
 
 
-We have to configure the DHCP server
+Install DNSMASQ server package
+------------------------------
 
 .. code-block:: bash
 
    sudo apt-get install dnsmasq
 
+Setup the DNSMASQ server
+------------------------
 
 We set the range of the IPs that will be assigned to the clients
 
@@ -22,7 +25,7 @@ We set the range of the IPs that will be assigned to the clients
     # ADD THE FOLLOWING LINES
     interface=wlan0
     dhcp-range=192.168.1.10,192.168.1.200,255.255.255.0,12h
-    address=/#/192.168.1.1    #redirect all DNS requests to 192.168.1.1
+    
 
 
 Edit the file Hosts
@@ -35,14 +38,27 @@ Edit the file Hosts
    192.168.1.1     mazizone
 
 
-And type :
+Restart the DNSMASQ server
+--------------------------
 
 .. code-block:: bash
 
-   sudo service hostapd start
    sudo service dnsmasq restart
-   sudo reboot
 
 
+
+Turn on IP forwarding
+---------------------
+
+.. code-block:: bash
+
+   echo "1"| sudo tee /proc/sys/net/ipv4/ip_forward
+
+Add a routing rule for forwarding internet
+------------------------------------------
+
+.. code-block:: bash
+
+   sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 

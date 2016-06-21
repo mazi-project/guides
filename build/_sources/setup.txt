@@ -62,3 +62,17 @@ set the following lines of code:
       netmask 255.255.255.0
       gateway 192.168.1.1
      
+
+
+TP-LINK TL-WN725N model
+-----------------------
+
+In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please follow these steps:
+
+.. code-block:: bash
+
+   sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
+   sudo tar xzf 8188eu-20160219.tar.gz
+   sudo ./install.sh
+   sudo reboot
+
