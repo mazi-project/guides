@@ -194,11 +194,11 @@ sudo hostapd -B /etc/hostapd/hostapd.conf
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the isc –serserver.</p>
+<p class="last">In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the dnsmasq server.</p>
 </div>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
 sudo ifup wlan0
-sudo service isc-dhcp-server restart
+sudo service dnsmasq restart
 </pre></div>
 </div>
 </div>

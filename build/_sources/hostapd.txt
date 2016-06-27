@@ -53,10 +53,10 @@ Run hostapd in the background
    sudo hostapd -B /etc/hostapd/hostapd.conf
 
 .. note::
-   In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the isc –serserver.
+   In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the dnsmasq server.
 
 .. code-block:: bash
    
    sudo ifdown wlan0
    sudo ifup wlan0
-   sudo service isc-dhcp-server restart
+   sudo service dnsmasq restart
