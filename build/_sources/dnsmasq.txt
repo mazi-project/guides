@@ -20,7 +20,7 @@ We set the range of the IPs that will be assigned to the clients
 
 .. code-block:: bash
 
-    sudo nano/etc/dnsmasq.conf
+    sudo nano /etc/dnsmasq.conf
 
     # ADD THE FOLLOWING LINES
     interface=wlan0

@@ -10,7 +10,7 @@ What you will need
 
    required
 
-installation
+Installation
 ------------
 .. toctree::
    :maxdepth: 1

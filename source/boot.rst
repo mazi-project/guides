@@ -12,8 +12,10 @@ Add the following lines before exit 0
 
 .. code-block:: bash
    
+   echo "1"| sudo tee /proc/sys/net/ipv4/ip_forward
+   sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE  
+
    /sbin/ifconfig wlan0 192.168.1.1
-   service isc-dhcp-server start
    sudo ifdown wlan0
    sleep 1
    hostapd -B /etc/hostapd/hostapd.conf

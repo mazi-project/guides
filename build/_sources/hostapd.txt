@@ -28,12 +28,17 @@ add these lines of code:
    ssid=THE_NAME_OF_YOUR_WIFI_NETWORK
    hw_mode=g
    channel=11
-   wpa=1
-   wpa_passphrase=SECRETPASSWORD
+   wpa=1                               
+   wpa_passphrase=SECRETPASSWORD  
    wpa_key_mgmt=WPA-PSK
    wpa_pairwise=TKIP CCMP
    wpa_ptk_rekey=600
    macaddr_acl=0   
+
+.. note::
+   
+   In case you want a access point without password  add a # in front of the line with wpa
+
 
 
 Start the access point by running hostapd
@@ -44,8 +49,8 @@ Start the access point by running hostapd
    sudo ifdown wlan0
    sudo hostapd -d /etc/hostapd/hostapd.conf
 
-Run hostapd in the background
------------------------------
+Or run hostapd in the background
+--------------------------------
 
 .. code-block:: bash
 
