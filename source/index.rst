@@ -11,8 +11,8 @@ This tutorial aims at helping advanced MAZI toolkit owners to understand and mak
 Moreover, a novice MAZI toolkit owner can simply download a ready-to-go SD card image and deploy a Mazizone.
 
 
-Download MAZI images
---------------------
+Download a MAZI SD card image
+-----------------------------
 
 In this section, you can find links with SD card images with all the configurations pre-installed.
 

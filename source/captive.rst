@@ -6,7 +6,7 @@ Configuration Captive Portal
 ============================
 
 
-Firstly, you need to configure raspberry pi as access point :ref:`accessPoint`  
+Firstly, you need to configure raspberry pi as access point :ref:`accessPoint`.
 
 
 Configure dnsmasq
