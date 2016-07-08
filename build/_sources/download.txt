@@ -12,27 +12,27 @@ The procedure of loading an image on a SD card is straightforward and described 
 	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1" target="_blank">here</a>
 
 
-+-----------------------------------------------------------------------------------------------+
-|                                 MAZI toolkit v1 SD card images                                |
-+==============================+===============+=============+=============+=======+============+
-|Name                          |Device         |Wi-Fi module |OS           |SD card|Applications|              
-+------------------------------+---------------+-------------+-------------+-------+------------+                                          
-|                              |               |             |             |       |- Etherpad  |
-|mazizone_pi2_wn722n_8gb.img   | Raspberry pi2 |  TL-WN722N  |Raspbian     |8GB    |- Limesurvey|
-|                              |               |             |Jessie Lite  |       |- Owncloud  |
-+------------------------------+---------------+-------------+-------------+-------+------------+
-|                              |               |             |             |       |- Etherpad  |
-|mazizone_pi2_wn725n_8gb.img   | Raspberry pi2 |  TL-WN725N  |Raspbian     |8GB    |- Limesurvey|
-|                              |               |             |Jessie Lite  |       |- Owncloud  |
-+------------------------------+---------------+-------------+-------------+-------+------------+
-|                              |               |             |             |       |- Etherpad  |
-|mazizone_pi3_wn8200nd_8gb.img | Raspberry pi3 | TL-WN8200ND |Raspbian     |8GB    |- Limesurvey|
-|                              |               |             |Jessie Lite  |       |- Owncloud  |
-+------------------------------+---------------+-------------+-------------+-------+------------+
-|                              |               |             |             |       |- Etherpad  |
-|mazizone_pi3_onboard_8gb.img  | Raspberry pi3 |   on board  |Raspbian     |8GB    |- Limesurvey|
-|                              |               |             |Jessie Lite  |       |- Owncloud  |
-+------------------------------+---------------+-------------+-------------+-------+------------+
++-------------------------------------------------------------------------------------------------+
+|                                 MAZI toolkit v1 SD card images                                  |
++============================+=================+===============+=============+=======+============+
+|Name                        |Device           |Wi-Fi module   |OS           |SD card|Applications|              
++----------------------------+-----------------+---------------+-------------+-------+------------+                                          
+|                            |                 |pi3 onboard    |             |       |- Etherpad  |
+|mazizone_v1.img             |Raspberry pi3 or |pi2 TL-WN722N  |Raspbian     |8GB    |- Limesurvey|
+|                            | Raspberry pi2   |pi2 TL-WN8200ND|Jessie Lite  |       |- Owncloud  |
++----------------------------+-----------------+---------------+-------------+-------+------------+
+|                            |                 |  TL-WN722N    |             |       |- Etherpad  |
+|mazizone_v1_antenna.img     | Raspberry pi3   |  TL-WN8200ND  |Raspbian     |8GB    |- Limesurvey|
+|                            |                 |               |Jessie Lite  |       |- Owncloud  |
++----------------------------+-----------------+---------------+-------------+-------+------------+
+|                            |                 |               |             |       |- Etherpad  |
+|mazizone_v1_wn725n_pi3.img  | Raspberry pi3   |  TL-WN725N    |Raspbian     |8GB    |- Limesurvey|
+|                            |                 |               |Jessie Lite  |       |- Owncloud  |
++----------------------------+-----------------+---------------+-------------+-------+------------+
+|                            |                 |               |             |       |- Etherpad  |
+|mazizone_v1_wn725n_pi2.img  | Raspberry pi2   |  TL-WN725N    |Raspbian     |8GB    |- Limesurvey|
+|                            |                 |               |Jessie Lite  |       |- Owncloud  |
++----------------------------+-----------------+---------------+-------------+-------+------------+
 
 
 .. note::
