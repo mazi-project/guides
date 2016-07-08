@@ -42,6 +42,8 @@ The procedure of loading an image on a SD card is straightforward and described 
 	
 	**network** SSID: mazizone and no password
 	
+	**Etherpad** user: admin password: mazizone
+	
 	**Owncloud** user: admin password: mazizone
 	
 	**LimeSurvey admin local.mazizone.eu/limesurvey/admin:** user: admin password: mazilime
