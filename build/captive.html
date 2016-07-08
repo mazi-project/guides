@@ -79,7 +79,7 @@
             
             
                 <ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">Download the image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
@@ -113,7 +113,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -137,55 +137,55 @@
             
   <div class="section" id="configuration-captive-portal">
 <span id="captive"></span><h1>Configuration Captive Portal<a class="headerlink" href="#configuration-captive-portal" title="Permalink to this headline">¶</a></h1>
-<p>Firstly, you need to configure raspberry pi as access point <a class="reference internal" href="accessPoint.html#accesspoint"><span>Making a Wi-Fi Access Point</span></a></p>
+<p>Firstly, you need to configure raspberry pi as access point <a class="reference internal" href="accessPoint.html#accesspoint"><span>Making a Wi-Fi Access Point</span></a>.</p>
 <div class="section" id="configure-dnsmasq">
 <h2>Configure dnsmasq<a class="headerlink" href="#configure-dnsmasq" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/dnsmasq.conf
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/dnsmasq.conf
 </pre></div>
 </div>
 <p>Add the following line:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">address</span><span class="o">=</span>/#/192.168.1.1 <span class="c1">#redirect all DNS requests to 192.168.1.1</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">address</span><span class="o">=</span>/#/192.168.1.1 <span class="c">#redirect all DNS requests to 192.168.1.1</span>
 </pre></div>
 </div>
 <p>Your final dnsmasq configuration file should include the following:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># MAZI configuration</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># MAZI configuration</span>
 <span class="nv">interface</span><span class="o">=</span>wlan0
 dhcp-range<span class="o">=</span>192.168.1.10,192.168.1.200,255.255.255.0,12h
-<span class="nv">address</span><span class="o">=</span>/#/192.168.1.1 <span class="c1">#redirect all DNS requests to 192.168.1.1</span>
+<span class="nv">address</span><span class="o">=</span>/#/192.168.1.1 <span class="c">#redirect all DNS requests to 192.168.1.1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="installing-a-web-server">
 <h2>Installing a web server<a class="headerlink" href="#installing-a-web-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install apache2
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install apache2
 </pre></div>
 </div>
 </div>
 <div class="section" id="replace-the-placeholder-page">
 <h2>Replace the placeholder page<a class="headerlink" href="#replace-the-placeholder-page" title="Permalink to this headline">¶</a></h2>
 <p>Let’s browse to the /var/www/html directory and rename the default page:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /var/www/html/
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /var/www/html/
 mv index.html index.html.old
 </pre></div>
 </div>
 <p>Now you can make a new folder and add your site in it.</p>
 <p>Then you should make a new index.html file inside the folder /var/www/html for redirecting all requests to your site.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir your-new-page/
+<div class="highlight-bash"><div class="highlight"><pre>mkdir your-new-page/
 sudo nano index.html
 </pre></div>
 </div>
 <p>Paste the following</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-               <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">HTTP-EQUIV</span><span class="o">=</span><span class="s">&quot;REFRESH&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0; url=http://localhost/your-new-page&quot;</span><span class="p">&gt;</span>
-       <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-       <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+       <span class="nt">&lt;head&gt;</span>
+               <span class="nt">&lt;meta</span> <span class="na">HTTP-EQUIV=</span><span class="s">&quot;REFRESH&quot;</span> <span class="na">content=</span><span class="s">&quot;0; url=http://localhost/your-new-page&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;/head&gt;</span>
+       <span class="nt">&lt;body&gt;</span>
+       <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
 <p>Restart apache web server</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service apache2 restart
+<div class="highlight-bash"><div class="highlight"><pre>sudo service apache2 restart
 </pre></div>
 </div>
 </div>
@@ -208,7 +208,6 @@ sudo nano index.html
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, MAZI project.
 
     </p>
   </div> 
@@ -253,7 +252,15 @@ sudo nano index.html
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+<div class="footer">
+	<span class="creativecommons">
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";><img src="_static/cc.large.png" border="0" alt="Creative Commons License"/></a>
+		Whatever is licensed under a
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";>Creative Commons Attribution 3.0 United States License.</a>
+	</span>
+</div>
+
 
 </body>
 </html>

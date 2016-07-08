@@ -81,7 +81,7 @@
             
             
                 <ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">Download the image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
@@ -127,7 +127,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -155,17 +155,17 @@
 <span id="hostapd"></span><h1>Install hostapd<a class="headerlink" href="#install-hostapd" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-hostapd-package">
 <h2>Install hostapd package<a class="headerlink" href="#install-hostapd-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install hostapd
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install hostapd
 </pre></div>
 </div>
 </div>
 <div class="section" id="nitialize-hostapd">
 <h2>Ιnitialize hostapd<a class="headerlink" href="#nitialize-hostapd" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hostapd/hostapd.conf
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/hostapd/hostapd.conf
 </pre></div>
 </div>
 <p>add these lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">interface</span><span class="o">=</span>wlan0
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">interface</span><span class="o">=</span>wlan0
 <span class="nv">driver</span><span class="o">=</span>nl80211
 <span class="nv">ssid</span><span class="o">=</span>THE_NAME_OF_YOUR_WIFI_NETWORK
 <span class="nv">hw_mode</span><span class="o">=</span>g
@@ -185,14 +185,14 @@
 </div>
 <div class="section" id="start-the-access-point-by-running-hostapd">
 <h2>Start the access point by running hostapd<a class="headerlink" href="#start-the-access-point-by-running-hostapd" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
+<div class="highlight-bash"><div class="highlight"><pre>sudo ifdown wlan0
 sudo hostapd -d /etc/hostapd/hostapd.conf
 </pre></div>
 </div>
 </div>
 <div class="section" id="or-run-hostapd-in-the-background">
 <h2>Or run hostapd in the background<a class="headerlink" href="#or-run-hostapd-in-the-background" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
+<div class="highlight-bash"><div class="highlight"><pre>sudo ifdown wlan0
 sudo hostapd -B /etc/hostapd/hostapd.conf
 </pre></div>
 </div>
@@ -200,7 +200,7 @@ sudo hostapd -B /etc/hostapd/hostapd.conf
 <p class="first admonition-title">Note</p>
 <p class="last">In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the dnsmasq server.</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifdown wlan0
+<div class="highlight-bash"><div class="highlight"><pre>sudo ifdown wlan0
 sudo ifup wlan0
 sudo service dnsmasq restart
 </pre></div>
@@ -227,7 +227,6 @@ sudo service dnsmasq restart
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, MAZI project.
 
     </p>
   </div> 
@@ -272,7 +271,15 @@ sudo service dnsmasq restart
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+<div class="footer">
+	<span class="creativecommons">
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";><img src="_static/cc.large.png" border="0" alt="Creative Commons License"/></a>
+		Whatever is licensed under a
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";>Creative Commons Attribution 3.0 United States License.</a>
+	</span>
+</div>
+
 
 </body>
 </html>

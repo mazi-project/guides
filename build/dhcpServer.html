@@ -78,7 +78,7 @@
             
             
                 <ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">Download the image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
@@ -107,7 +107,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -133,17 +133,17 @@
 <span id="dhcpserver"></span><h1>Install DHCP server<a class="headerlink" href="#install-dhcp-server" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-isc-dhcp-server-package">
 <h2>Install isc dhcp server package<a class="headerlink" href="#install-isc-dhcp-server-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install isc-dhcp-server
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install isc-dhcp-server
 </pre></div>
 </div>
 </div>
 <div class="section" id="setup-the-dhcp-server">
 <h2>Setup the DHCP server<a class="headerlink" href="#setup-the-dhcp-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/dhcp/dhcpd.conf
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/dhcp/dhcpd.conf
 </pre></div>
 </div>
 <p>add these lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
+<div class="highlight-bash"><div class="highlight"><pre>subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
    range 192.168.1.10 192.168.1.200<span class="p">;</span>
    option domain-name-servers 192.168.1.1<span class="p">;</span>
    option routers 192.168.1.1<span class="p">;</span>
@@ -154,43 +154,43 @@
 </div>
 <div class="section" id="bring-up-the-interface">
 <h2>Bring up the interface<a class="headerlink" href="#bring-up-the-interface" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifconfig wlan0 192.168.1.1
+<div class="highlight-bash"><div class="highlight"><pre>sudo ifconfig wlan0 192.168.1.1
 </pre></div>
 </div>
 </div>
 <div class="section" id="restart-the-dhcp-server">
 <h2>Restart the DHCP server<a class="headerlink" href="#restart-the-dhcp-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service isc-dhcp-server restart
+<div class="highlight-bash"><div class="highlight"><pre>sudo service isc-dhcp-server restart
 </pre></div>
 </div>
 </div>
 <div class="section" id="turn-on-ip-forwarding">
 <h2>Turn on IP forwarding<a class="headerlink" href="#turn-on-ip-forwarding" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-a-routing-rule-for-forwarding-internet">
 <h2>Add a routing rule for forwarding internet<a class="headerlink" href="#add-a-routing-rule-for-forwarding-internet" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </pre></div>
 </div>
 </div>
 <div class="section" id="configure-isc-dhcp-server">
 <h2>Configure isc-dhcp-server<a class="headerlink" href="#configure-isc-dhcp-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/default/isc-dhcp-server
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/default/isc-dhcp-server
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li>uncomment the line DHCP_CONF=/etc/dhcp/dhcp.conf (remove the #)</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">DHCP_CONF</span><span class="o">=</span>/etc/dhcp/dhcp.conf
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">DHCP_CONF</span><span class="o">=</span>/etc/dhcp/dhcp.conf
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>fill in the interface wlan0, in the last line</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">INTERFACES</span><span class="o">=</span><span class="s2">&quot;wlan0&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">INTERFACES</span><span class="o">=</span><span class="s2">&quot;wlan0&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -206,7 +206,6 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, MAZI project.
 
     </p>
   </div> 
@@ -251,7 +250,15 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-   
+  
+<div class="footer">
+	<span class="creativecommons">
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";><img src="_static/cc.large.png" border="0" alt="Creative Commons License"/></a>
+		Whatever is licensed under a
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";>Creative Commons Attribution 3.0 United States License.</a>
+	</span>
+</div>
+
 
 </body>
 </html>
