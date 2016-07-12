@@ -128,7 +128,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -156,43 +156,43 @@
 <span id="dnsmasq"></span><h1>Install DNSMASQ server<a class="headerlink" href="#install-dnsmasq-server" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-dnsmasq-server-package">
 <h2>Install DNSMASQ server package<a class="headerlink" href="#install-dnsmasq-server-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install dnsmasq
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install dnsmasq
 </pre></div>
 </div>
 </div>
 <div class="section" id="setup-the-dnsmasq-server">
 <h2>Setup the DNSMASQ server<a class="headerlink" href="#setup-the-dnsmasq-server" title="Permalink to this headline">¶</a></h2>
 <p>We set the range of the IPs that will be assigned to the clients</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/dnsmasq.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/dnsmasq.conf
 
-<span class="c"># ADD THE FOLLOWING LINES</span>
+<span class="c1"># ADD THE FOLLOWING LINES</span>
 <span class="nv">interface</span><span class="o">=</span>wlan0
 dhcp-range<span class="o">=</span>192.168.1.10,192.168.1.200,255.255.255.0,12h
 </pre></div>
 </div>
 <p>Edit the file Hosts</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/hosts
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/hosts
 
-<span class="c">#ADD THE FOLLOWING LINE AT THE BOTTOM</span>
+<span class="c1">#ADD THE FOLLOWING LINE AT THE BOTTOM</span>
 192.168.1.1     mazizone
 </pre></div>
 </div>
 </div>
 <div class="section" id="restart-the-dnsmasq-server">
 <h2>Restart the DNSMASQ server<a class="headerlink" href="#restart-the-dnsmasq-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo service dnsmasq restart
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service dnsmasq restart
 </pre></div>
 </div>
 </div>
 <div class="section" id="turn-on-ip-forwarding">
 <h2>Turn on IP forwarding<a class="headerlink" href="#turn-on-ip-forwarding" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-a-routing-rule-for-forwarding-internet">
 <h2>Add a routing rule for forwarding internet<a class="headerlink" href="#add-a-routing-rule-for-forwarding-internet" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </pre></div>
 </div>
 </div>

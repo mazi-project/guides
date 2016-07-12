@@ -120,7 +120,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -146,11 +146,11 @@
             
   <div class="section" id="configuration">
 <span id="boot"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/rc.local
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/rc.local
 </pre></div>
 </div>
 <p>Add the following lines before exit 0</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 /sbin/ifconfig wlan0 192.168.1.1
@@ -158,7 +158,7 @@ sudo ifdown wlan0
 sleep 1
 hostapd -B /etc/hostapd/hostapd.conf
 sudo ifconfig wlan0 192.168.1.1
-<span class="nb">exit </span>0
+<span class="nb">exit</span> 0
 </pre></div>
 </div>
 </div>

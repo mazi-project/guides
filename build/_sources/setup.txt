@@ -67,12 +67,28 @@ set the following lines of code:
 TP-LINK TL-WN725N model
 -----------------------
 
-In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please follow these steps:
+In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please follow these steps:  
+
+Use command uname -a to find the kernel version
+
+.. code-block:: bash
+   
+   sudo  uname -a
+
+For example, for the Pi 2 B or 3 B, if uname -a shows **Linux raspberrypi 4.4.8-v7+ #881 SMP Sat Apr 30 12:16:50 BST 2016 armv7l GNU/Linux** the file to download is 8188eu-4.4.8-v7-881.tar.gz
+
+Find the driver that corresponds to you, according to the model of kernel. |Here|
+
+.. |Here| raw:: html
+
+   <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=62371" target="_blank">Here</a>
+
+Download and install driver
 
 .. code-block:: bash
 
-   sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
-   sudo tar xzf 8188eu-20160219.tar.gz
+   sudo wget https://dl.dropboxusercontent.com/u/80256631/#file#
+   sudo tar xzf #file#
    sudo ./install.sh
    sudo reboot
 

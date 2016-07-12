@@ -44,4 +44,4 @@ Raspberry Pi to the Internet via an Ethernet cable.
 USB Wi-Fi dongle 
 ----------------
 
-This tutorial is using a TP-Link TL-WN722N 150Mbps **or** a TP-Link TL-WN725N.
+This tutorial is using a TP-Link TL-WN722N 150Mbps, TP-Link TL-WN8200ND 300Mbps **or** a nano usb adapter TP-Link TL-WN725N.

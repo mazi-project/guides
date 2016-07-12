@@ -125,7 +125,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -152,7 +152,7 @@
   <div class="section" id="setup">
 <span id="id1"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
 <p>Once you succesfully log in the Raspberry, start the rasbian configuration tool:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo raspi-config
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo raspi-config
 </pre></div>
 </div>
 <p><strong>Re-size to file-system to use the entire SD card</strong></p>
@@ -173,29 +173,29 @@
 </div>
 <div class="section" id="change-the-root-password">
 <h1>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo passwd
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-the-password-of-the-pi-user">
 <h1>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>passwd
+<div class="highlight-bash"><div class="highlight"><pre><span></span>passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-repositories">
 <h1>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get update
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
 </pre></div>
 </div>
 </div>
 <div class="section" id="assign-a-static-ip-address-to-wlan0">
 <h1>Assign a static ip address to wlan0<a class="headerlink" href="#assign-a-static-ip-address-to-wlan0" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/network/interfaces
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/network/interfaces
 </pre></div>
 </div>
 <p>set the following lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># for Internet Connection Sharing</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># for Internet Connection Sharing</span>
 auto wlan0
 
 iface wlan0 inet static
@@ -208,8 +208,15 @@ iface wlan0 inet static
 <div class="section" id="tp-link-tl-wn725n-model">
 <h1>TP-LINK TL-WN725N model<a class="headerlink" href="#tp-link-tl-wn725n-model" title="Permalink to this headline">¶</a></h1>
 <p>In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please follow these steps:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-20160219.tar.gz
-sudo tar xzf 8188eu-20160219.tar.gz
+<p>Use command uname -a to find the kernel version</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo  uname -a
+</pre></div>
+</div>
+<p>For example, for the Pi 2 B or 3 B, if uname -a shows <strong>Linux raspberrypi 4.4.8-v7+ #881 SMP Sat Apr 30 12:16:50 BST 2016 armv7l GNU/Linux</strong> the file to download is 8188eu-4.4.8-v7-881.tar.gz</p>
+<p>Find the driver that corresponds to you, according to the model of kernel. <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=62371" target="_blank">Here</a></p>
+<p>Download and install driver</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo wget https://dl.dropboxusercontent.com/u/80256631/#file#
+sudo tar xzf <span class="c1">#file#</span>
 sudo ./install.sh
 sudo reboot
 </pre></div>
