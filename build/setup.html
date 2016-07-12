@@ -215,11 +215,15 @@ iface wlan0 inet static
 <p>For example, for the Pi 2 B or 3 B, if uname -a shows <strong>Linux raspberrypi 4.4.8-v7+ #881 SMP Sat Apr 30 12:16:50 BST 2016 armv7l GNU/Linux</strong> the file to download is 8188eu-4.4.8-v7-881.tar.gz</p>
 <p>Find the driver that corresponds to you, according to the model of kernel. <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=62371" target="_blank">Here</a></p>
 <p>Download and install driver</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo wget https://dl.dropboxusercontent.com/u/80256631/#file#
-sudo tar xzf <span class="c1">#file#</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-4.4.8-v7-881.tar.gz
+sudo tar xzf 8188eu-4.4.8-v7-881.tar.gz
 sudo ./install.sh
 sudo reboot
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Replace the <strong>80256631/8188eu-4.4.8-v7-881.tar.gz</strong> with the appropriate file  to your own kernel</p>
 </div>
 </div>
 

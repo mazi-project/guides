@@ -1,7 +1,7 @@
+.. _writingSD :
+
 Writing an image to the SD card
 -------------------------------
-
-
 
 **For Linux**
 

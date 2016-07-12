@@ -5,7 +5,7 @@ Download a MAZI SD card image
 
 In this section you can choose one of the SD card images available from the table below. 
 According to your hardware equipment you can download the respective image from the repository of MAZI images |here|, load it on your SD card and deploy your toolkit. 
-The procedure of loading an image on a SD card is straightforward and described in details in :ref:`writingSD`. 
+The procedure of loading an image on a SD card is straightforward and described in details in :ref:`writingSD`.
 
 .. |here| raw:: html
 

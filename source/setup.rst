@@ -87,8 +87,11 @@ Download and install driver
 
 .. code-block:: bash
 
-   sudo wget https://dl.dropboxusercontent.com/u/80256631/#file#
-   sudo tar xzf #file#
+   sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-4.4.8-v7-881.tar.gz
+   sudo tar xzf 8188eu-4.4.8-v7-881.tar.gz
    sudo ./install.sh
    sudo reboot
 
+.. note::
+
+   Replace the **80256631/8188eu-4.4.8-v7-881.tar.gz** with the appropriate file  to your own kernel
