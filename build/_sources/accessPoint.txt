@@ -28,12 +28,20 @@ Initial setup
    setup
 
 Installing DNSMASQ server and Hostapd
----------------------------------------
+-------------------------------------
 .. toctree::
    :maxdepth: 1
 
    dnsmasq
    hostapd   
+
+Add internet forwarding
+-----------------------
+.. toctree::
+   :maxdepth: 1
+
+   forwarding
+
 
 Start everything at boot
 ------------------------

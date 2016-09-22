@@ -47,18 +47,3 @@ Restart the DNSMASQ server
 
 
 
-Turn on IP forwarding
----------------------
-
-.. code-block:: bash
-
-   echo "1"| sudo tee /proc/sys/net/ipv4/ip_forward
-
-Add a routing rule for forwarding internet
-------------------------------------------
-
-.. code-block:: bash
-
-   sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-
-
