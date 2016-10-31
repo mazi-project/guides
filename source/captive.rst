@@ -20,7 +20,7 @@ Add the following line:
 
 .. code-block:: bash
 
- address=/#/192.168.1.1 #redirect all DNS requests to 192.168.1.1
+ address=/#/10.0.0.1 #redirect all DNS requests to 10.0.0.1
 
 Your final dnsmasq configuration file should include the following:
 
@@ -28,8 +28,8 @@ Your final dnsmasq configuration file should include the following:
 
  # MAZI configuration
  interface=wlan0
- dhcp-range=192.168.1.10,192.168.1.200,255.255.255.0,12h
- address=/#/192.168.1.1 #redirect all DNS requests to 192.168.1.1
+ dhcp-range=10.0.0.10,10.0.0.200,255.255.255.0,12h
+ address=/#/10.0.0.1 #redirect all DNS requests to 10.0.0.1
 
 Installing a web server
 -----------------------
