@@ -1,0 +1,41 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          internet-forward
+# Required-Start:    $local_fs $remote_fs $network $syslog
+# Required-Stop:     $local_fs $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Starts inot2.sh script 
+# Description:       Service script which start inot2.sh at boot time
+### END INIT INFO
+
+#Start script /home/pi/mazi/inot2.sh
+start() {
+        cd /home/pi/mazi
+        ./inot2.sh &
+}
+# kill process  inot2
+stop() {
+    
+       kill $(pgrep inot2)
+
+} 
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        stop
+        start
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+exit 0
+
+
