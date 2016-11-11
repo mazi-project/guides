@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install DHCP server &mdash; mazi-guides  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mazi-guides  documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> mazi-guides
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">mazi-guides</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Install DHCP server</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dhcpServer.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-dhcp-server">
+<span id="dhcpserver"></span><h1>Install DHCP server<a class="headerlink" href="#install-dhcp-server" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-isc-dhcp-server-package">
+<h2>Install isc dhcp server package<a class="headerlink" href="#install-isc-dhcp-server-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install isc-dhcp-server
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-the-dhcp-server">
+<h2>Setup the DHCP server<a class="headerlink" href="#setup-the-dhcp-server" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/dhcp/dhcpd.conf
+</pre></div>
+</div>
+<p>add these lines of code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
+   range 192.168.1.10 192.168.1.200<span class="p">;</span>
+   option domain-name-servers 192.168.1.1<span class="p">;</span>
+   option routers 192.168.1.1<span class="p">;</span>
+   interface wlan0<span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bring-up-the-interface">
+<h2>Bring up the interface<a class="headerlink" href="#bring-up-the-interface" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo ifconfig wlan0 192.168.1.1
+</pre></div>
+</div>
+</div>
+<div class="section" id="restart-the-dhcp-server">
+<h2>Restart the DHCP server<a class="headerlink" href="#restart-the-dhcp-server" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo service isc-dhcp-server restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="turn-on-ip-forwarding">
+<h2>Turn on IP forwarding<a class="headerlink" href="#turn-on-ip-forwarding" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-routing-rule-for-forwarding-internet">
+<h2>Add a routing rule for forwarding internet<a class="headerlink" href="#add-a-routing-rule-for-forwarding-internet" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-isc-dhcp-server">
+<h2>Configure isc-dhcp-server<a class="headerlink" href="#configure-isc-dhcp-server" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/default/isc-dhcp-server
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>uncomment the line DHCP_CONF=/etc/dhcp/dhcp.conf (remove the #)</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">DHCP_CONF</span><span class="o">=</span>/etc/dhcp/dhcp.conf
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>fill in the interface wlan0, in the last line</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">INTERFACES</span><span class="o">=</span><span class="s2">&quot;wlan0&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<div class="footer">
+	<span class="creativecommons">
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";><img src="_static/cc.large.png" border="0" alt="Creative Commons License"/></a>
+		Whatever is licensed under a
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";>Creative Commons Attribution 3.0 United States License.</a>
+	</span>
+</div>
+
+
+</body>
+</html>

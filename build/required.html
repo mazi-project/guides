@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raspberry pi &mdash; mazi-guides  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mazi-guides  documentation" href="index.html"/>
+        <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
+        <link rel="next" title="Download the image" href="image.html"/>
+        <link rel="prev" title="Making a Wi-Fi Access Point" href="accessPoint.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> mazi-guides
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Raspberry pi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sd-card">SD Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-and-connectivity-cables">Display and connectivity cables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keyboard">Keyboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-supply">Power supply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internet-connection">Internet connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usb-wi-fi-dongle">USB Wi-Fi dongle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#add-internet-forwarding">Add internet forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">mazi-guides</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="accessPoint.html">Making a Wi-Fi Access Point</a> &raquo;</li>
+      
+    <li>Raspberry pi</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/required.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="raspberry-pi">
+<span id="required"></span><h1>Raspberry pi<a class="headerlink" href="#raspberry-pi" title="Permalink to this headline">¶</a></h1>
+<p>The Raspberry Pi is a low cost, credit-card sized computer that plugs into a
+computer monitor or TV, and uses a standard keyboard and mouse</p>
+<img alt="_images/raspberry.jpg" src="_images/raspberry.jpg" />
+</div>
+<div class="section" id="sd-card">
+<h1>SD Card<a class="headerlink" href="#sd-card" title="Permalink to this headline">¶</a></h1>
+<p>We recommend a 8GB or 16GB SD card.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The card class determines the sustained write speed for the card, a class 4 card
+will be able to write at 4MB/s, whereas a class 10 should be able to attain 10 MB/s.
+It would be preferable to buy a class 10 card for better response of Raspberry pi</p>
+</div>
+</div>
+<div class="section" id="display-and-connectivity-cables">
+<h1>Display and connectivity cables<a class="headerlink" href="#display-and-connectivity-cables" title="Permalink to this headline">¶</a></h1>
+<p>Any HDMI/DVI monitor or TV should work as a display for the Pi.
+For best results, use one with HDMI input, but other connections
+are available for older devices.Use a standard Ethernet cable for
+internet access.</p>
+</div>
+<div class="section" id="keyboard">
+<h1>Keyboard<a class="headerlink" href="#keyboard" title="Permalink to this headline">¶</a></h1>
+<p>Any standard USB keyboard will work with your Raspberry Pi.</p>
+</div>
+<div class="section" id="power-supply">
+<h1>Power supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">¶</a></h1>
+<p>Use a 5V micro USB power supply to power your Raspberry Pi. Be
+careful that whatever power supply you use outputs at least 5V.
+Insufficient power will cause your Pi to behave in strange ways.</p>
+</div>
+<div class="section" id="internet-connection">
+<h1>Internet connection<a class="headerlink" href="#internet-connection" title="Permalink to this headline">¶</a></h1>
+<p>To update or download software, we recommend that you connect your
+Raspberry Pi to the Internet via an Ethernet cable.</p>
+</div>
+<div class="section" id="usb-wi-fi-dongle">
+<h1>USB Wi-Fi dongle<a class="headerlink" href="#usb-wi-fi-dongle" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is using a TP-Link TL-WN722N 150Mbps, TP-Link TL-WN8200ND 300Mbps <strong>or</strong> a nano usb adapter TP-Link TL-WN725N.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="image.html" class="btn btn-neutral float-right" title="Download the image" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="accessPoint.html" class="btn btn-neutral" title="Making a Wi-Fi Access Point" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<div class="footer">
+	<span class="creativecommons">
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";><img src="_static/cc.large.png" border="0" alt="Creative Commons License"/></a>
+		Whatever is licensed under a
+		<a href="http://creativecommons.org/licenses/by/3.0/us/";>Creative Commons Attribution 3.0 United States License.</a>
+	</span>
+</div>
+
+
+</body>
+</html>
