@@ -12,10 +12,10 @@ guide of image INURA
 **Download INURA code**                                                                                                           
                                                                                                                      
 At  **/home/pi** directory                                                                                                     
-**$ sudo git clone https://github.com/mazi-project/guides.git**                                                                 
-Now you have all scripts from INURA image into the file **/INURA**                                                             
-Rename it to  mazi                                                                                                             
-**$ sudo mv /INURA /mazi**
+**$ sudo git clone -b inura https://github.com/mazi-project/guides.git**                                                                 
+Now you have all scripts from INURA image into the file **/guide**                                                             
+Rename folder to  mazi                                                                                                             
+**$ sudo mv /guide /mazi**
 
 **Run check.sh when a DHCP lease is created**                                                                                     
                                                                                                                                
