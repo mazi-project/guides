@@ -34,6 +34,13 @@ The procedure of loading an image on a SD card is straightforward and described 
 |                            												     |                 |                |Jessie Lite  |       |- Owncloud  |
 +----------------------------------------------------------------------------------------------------------------------------+-----------------+----------------+-------------+-------+------------+
 
+You can find here a full list of the available |images|.
+
+.. |images| raw:: html
+	
+	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-images.pdf" target="_blank">MAZI toolkit images</a>
+
+
 .. note::
 	You can find here all the credentials needed for the above images.
 	
