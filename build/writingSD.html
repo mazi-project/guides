@@ -33,9 +33,8 @@
 
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
-        <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
-        <link rel="next" title="Plugging in your Raspberry Pi" href="plugging.html"/>
-        <link rel="prev" title="Download the image" href="image.html"/> 
+        <link rel="next" title="Initial setup" href="setup.html"/>
+        <link rel="prev" title="What you will need" href="required.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,22 +82,17 @@
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="required.html">What you will need</a></li>
+</ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#installation">Installation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="image.html">Download the image</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Writing an image to the SD card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plugging.html">Plugging in your Raspberry Pi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging into your Raspberry Pi</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Writing an image to the SD card</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#add-internet-forwarding">Add internet forwarding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Initial setup</a></li>
 </ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
@@ -132,8 +126,6 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-          <li><a href="accessPoint.html">Making a Wi-Fi Access Point</a> &raquo;</li>
-      
     <li>Writing an image to the SD card</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -153,23 +145,23 @@
 <p><strong>For Linux</strong></p>
 <p>Please note that the use of the dd tool can overwrite any partition of your machine. If you specify the wrong device in the instructions below, you could delete your primary Linux partition. Please be careful.</p>
 <p>1.Run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>df -h
+<div class="highlight-bash"><div class="highlight"><pre>df -h
 </pre></div>
 </div>
 <p>To see what devices are currently mounted.</p>
 <p>2.Insert the SD card and run <strong>df -h</strong> again. The new device that has appeared is your SD card. The left column gives the device name of your SD card. It will be listed as something like <strong>/dev/mmcblk0p1</strong> or <strong>/dev/sdd1</strong>. The last part (p1 or 1 respectively) is the partition number but you want to write to the whole SD card, not just one partition. You therefore need to remove that part from the name, getting, for example, <strong>/dev/mmcblk0</strong> or <strong>/dev/sdd</strong> as the device name for the whole SD card.</p>
 <p>3.Now that you&#8217;ve noted what the device name is, you need to unmount it so that files can&#8217;t be read or written to the SD card while you are copying over the SD image</p>
 <p>4.Run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>umount /dev/sdd1
+<div class="highlight-bash"><div class="highlight"><pre>umount /dev/sdd1
 </pre></div>
 </div>
 <p>Replacing sdd1 with whatever your SD card&#8217;s device name is (including the partition number).</p>
 <p>5.In the terminal, write the image to the card with the command below, making sure you replace the input file <strong>if=</strong> argument with the path to your .img file, and the /dev/sdd in the output file <strong>of=</strong> argument with the right device name. This is very important, as you will lose all data on the hard drive if you provide the wrong device name. Make sure the device name is the name of the whole SD card as described above, not just a partition of it. For example, <strong>sdd</strong>, not <strong>sdds1</strong> or <strong>sddp1</strong>, and <strong>mmcblk0</strong>, not <strong>mmcblk0p1</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>2016-05-27-raspbian-jessie.img <span class="nv">of</span><span class="o">=</span>/dev/sdd
+<div class="highlight-bash"><div class="highlight"><pre>sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>2016-05-27-raspbian-jessie.img <span class="nv">of</span><span class="o">=</span>/dev/sdd
 </pre></div>
 </div>
 <p>6.The <strong>dd</strong> command does not give any information of its progress and so may appear to have frozen.To see the progress of the copy operation you can run in another terminal</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo pkill -USR1 -n -x dd
+<div class="highlight-bash"><div class="highlight"><pre>sudo pkill -USR1 -n -x dd
 </pre></div>
 </div>
 <p><strong>For Windows</strong></p>
@@ -190,10 +182,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="plugging.html" class="btn btn-neutral float-right" title="Plugging in your Raspberry Pi" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup.html" class="btn btn-neutral float-right" title="Initial setup" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="image.html" class="btn btn-neutral" title="Download the image" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="required.html" class="btn btn-neutral" title="What you will need" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,8 +1,10 @@
 .. _plugging:
 
+Initial setup
+=============
 
 Plugging in your Raspberry Pi
-=============================
+-----------------------------
 
 Before you plug anything into your Raspberry Pi, make sure that you have all the 
 equipment listed above to hand. Then follow these instructions:

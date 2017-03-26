@@ -1,8 +1,10 @@
 .. _logging:
 
+Initial setup
+=============
 
 Logging into your Raspberry Pi
-==============================
+------------------------------
 
 
  Once your Raspberry Pi has completed the boot process, a login prompt will 

@@ -22,13 +22,35 @@ In this section, you can find links with SD card images with all the configurati
    download
 
 
-Making a Wi-Fi Access Point 
----------------------------
+What you will need 
+------------------
 .. toctree::
    :maxdepth: 1
    
+   required
    
+Writing an image to the SD card
+-------------------------------         
+.. toctree::
+   :maxdepth: 1
+
+   writingSD
+
+Initial setup
+-------------
+.. toctree::
+   :maxdepth: 1
+  
+   setup
+
+
+Making a Wi-Fi Access Point
+---------------------------
+.. toctree::
+   :maxdepth: 1
+
    accessPoint
+
 
 Configuration Captive Portal
 ----------------------------

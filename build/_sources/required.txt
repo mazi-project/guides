@@ -1,7 +1,12 @@
 .. _required:
 
+What you will need
+==================
+
+
 Raspberry pi
 ------------
+
 The Raspberry Pi is a low cost, credit-card sized computer that plugs into a 
 computer monitor or TV, and uses a standard keyboard and mouse
 
@@ -51,3 +56,21 @@ USB Wi-Fi dongle
 ----------------
 
 This tutorial is using a TP-Link TL-WN722N 150Mbps, TP-Link TL-WN8200ND 300Mbps **or** a nano usb adapter TP-Link TL-WN725N.
+
+
+Software for the Raspberry Pi
+-----------------------------
+
+Official images for recommended Operating Systems are available to download
+from the Raspberry Pi website: |download-page|
+
+.. |Download-page| raw:: html
+
+   <a href="http://raspberrypi.org/downloads" target="_blank">Download page</a>
+
+Alternative distributions are available from third party vendors.
+After downloading the .zip file, unzip it to get the image file (.img) for writing it to your
+SD card.
+
+.. note::
+        We use the Raspbian Jessie on this tutorial.

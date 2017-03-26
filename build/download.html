@@ -33,7 +33,7 @@
 
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
-        <link rel="next" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
+        <link rel="next" title="What you will need" href="required.html"/>
         <link rel="prev" title="Welcome to mazi-guides!" href="index.html"/> 
 
   
@@ -80,7 +80,16 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Download a MAZI SD card image</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Download a MAZI SD card image</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="required.html">What you will need</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="writingSD.html">Writing an image to the SD card</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Initial setup</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
@@ -135,15 +144,15 @@
 <span id="download"></span><h1>Download a MAZI SD card image<a class="headerlink" href="#download-a-mazi-sd-card-image" title="Permalink to this headline">¶</a></h1>
 <p>In this section you can choose one of the SD card images available from the table below.
 According to your hardware equipment you can download the respective image from the repository of MAZI images <a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1" target="_blank">here</a>, load it on your SD card and deploy your toolkit.
-The procedure of loading an image on a SD card is straightforward and described in details in <a class="reference internal" href="writingSD.html#writingsd"><span class="std std-ref">Writing an image to the SD card</span></a>.</p>
+The procedure of loading an image on a SD card is straightforward and described in details in <a class="reference internal" href="writingSD.html#writingsd"><span>Writing an image to the SD card</span></a>.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="30%" />
-<col width="18%" />
-<col width="16%" />
-<col width="14%" />
+<col width="66%" />
+<col width="9%" />
 <col width="8%" />
-<col width="13%" />
+<col width="7%" />
+<col width="4%" />
+<col width="6%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head" colspan="6">MAZI toolkit v1 SD card images</th>
@@ -157,18 +166,18 @@ The procedure of loading an image on a SD card is straightforward and described 
 <td>SD card</td>
 <td>Applications</td>
 </tr>
-<tr class="row-odd"><td>mazizone_v1.img</td>
+<tr class="row-odd"><td><a class="reference external" href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1.zip">mazizone_v1.zip</a></td>
 <td><dl class="first last docutils">
 <dt>Raspberry pi3 or</dt>
 <dd>Raspberry pi2</dd>
 </dl>
 </td>
-<td>pi3 onboard
-pi2 TL-WN722N
+<td>pi3 onboard or
+pi2 TL-WN722N or
 pi2 TL-WN8200ND</td>
 <td>Raspbian
 Jessie Lite</td>
-<td>8GB</td>
+<td>4GB</td>
 <td><ul class="first last simple">
 <li>Etherpad</li>
 <li>Limesurvey</li>
@@ -176,9 +185,9 @@ Jessie Lite</td>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>mazizone_v1_antenna.img</td>
+<tr class="row-even"><td><a class="reference external" href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1_antenna.zip">mazizone_v1_antenna.zip</a></td>
 <td>Raspberry pi3</td>
-<td>TL-WN722N
+<td>TL-WN722N or
 TL-WN8200ND</td>
 <td>Raspbian
 Jessie Lite</td>
@@ -190,7 +199,7 @@ Jessie Lite</td>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>mazizone_v1_wn725n_pi3.img</td>
+<tr class="row-odd"><td><a class="reference external" href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1_wn725n_pi3.zip">mazizone_v1_wn725n_pi3.zip</a></td>
 <td>Raspberry pi3</td>
 <td>TL-WN725N</td>
 <td>Raspbian
@@ -203,7 +212,7 @@ Jessie Lite</td>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>mazizone_v1_wn725n_pi2.img</td>
+<tr class="row-even"><td><a class="reference external" href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1_wn725n_pi2.zip">mazizone_v1_wn725n_pi2.zip</a></td>
 <td>Raspberry pi2</td>
 <td>TL-WN725N</td>
 <td>Raspbian
@@ -218,6 +227,7 @@ Jessie Lite</td>
 </tr>
 </tbody>
 </table>
+<p>You can find here a full list of the available <a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-images.pdf" target="_blank">MAZI toolkit images</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>You can find here all the credentials needed for the above images.</p>
@@ -236,7 +246,7 @@ Jessie Lite</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="accessPoint.html" class="btn btn-neutral float-right" title="Making a Wi-Fi Access Point" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="required.html" class="btn btn-neutral float-right" title="What you will need" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to mazi-guides!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

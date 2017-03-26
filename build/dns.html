@@ -81,6 +81,15 @@
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="required.html">What you will need</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="writingSD.html">Writing an image to the SD card</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Initial setup</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
 </ul>
 <ul>
@@ -130,22 +139,22 @@
            <div itemprop="articleBody">
             
   <p id="dns"><strong>Install resolvconf package</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install resolvconf
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install resolvconf
 </pre></div>
 </div>
 <p>Then edit (with root permissions) either /etc/resolvconf/resolv.conf.d/head or /etc/resolvconf/resolv.conf.d/tail</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/resolvconf/resolv.conf.d/head
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/resolvconf/resolv.conf.d/head
 or
 sudo nano /etc/resolvconf/resolv.conf.d/tail
 </pre></div>
 </div>
 <p>Add the following lines</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>nameserver 8.8.8.8
+<div class="highlight-bash"><div class="highlight"><pre>nameserver 8.8.8.8
 nameserver 8.8.4.4
 </pre></div>
 </div>
 <p>And then run resolvconf -u to update the file</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo resolvconf -u
+<div class="highlight-bash"><div class="highlight"><pre>sudo resolvconf -u
 </pre></div>
 </div>
 

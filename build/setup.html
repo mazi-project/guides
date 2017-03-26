@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Setup &mdash; mazi-guides  documentation</title>
+  <title>Initial setup &mdash; mazi-guides  documentation</title>
   
 
   
@@ -33,9 +33,8 @@
 
   
     <link rel="top" title="mazi-guides  documentation" href="index.html"/>
-        <link rel="up" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
-        <link rel="next" title="Install DNSMASQ server" href="dnsmasq.html"/>
-        <link rel="prev" title="Logging into your Raspberry Pi" href="logging.html"/> 
+        <link rel="next" title="Making a Wi-Fi Access Point" href="accessPoint.html"/>
+        <link rel="prev" title="Writing an image to the SD card" href="writingSD.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,24 +82,26 @@
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="required.html">What you will need</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="writingSD.html">Writing an image to the SD card</a></li>
+</ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#change-the-root-password">Change the root password</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update-repositories">Update repositories</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assign-a-static-ip-address-to-wlan0">Assign a static ip address to wlan0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tp-link-tl-wn725n-model">TP-LINK TL-WN725N model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Initial setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plugging-in-your-raspberry-pi">Plugging in your Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging-into-your-raspberry-pi">Logging into your Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rasbian-configuration-tool">Rasbian configuration tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-the-root-password">Change the root password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-the-password-of-the-pi-user">Change the password of the pi user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-repositories">Update repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tp-link-tl-wn725n-model">TP-LINK TL-WN725N model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#add-internet-forwarding">Add internet forwarding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#start-everything-at-boot">Start everything at boot</a></li>
 </ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="captive.html">Configuration Captive Portal</a></li>
@@ -134,9 +135,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-          <li><a href="accessPoint.html">Making a Wi-Fi Access Point</a> &raquo;</li>
-      
-    <li>Setup</li>
+    <li>Initial setup</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -150,10 +149,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="setup">
-<span id="id1"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="initial-setup">
+<span id="setup"></span><h1>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plugging-in-your-raspberry-pi">
+<h2>Plugging in your Raspberry Pi<a class="headerlink" href="#plugging-in-your-raspberry-pi" title="Permalink to this headline">¶</a></h2>
+<p>Before you plug anything into your Raspberry Pi, make sure that you have all the
+equipment listed above to hand. Then follow these instructions:</p>
+<ol class="arabic simple">
+<li>Begin by slotting your SD card into the SD card slot on the Raspberry Pi, which will only fit one way.</li>
+<li>Next, plug in your USB keyboard into the USB slots on the Raspberry Pi.</li>
+<li>Make sure that your monitor or TV is turned on and that you have selected the right input (e.g. HDMI 1, DVI, etc).</li>
+<li>Then connect your HDMI cable from your Raspberry Pi to your monitor or TV.</li>
+<li>If you intend to connect your Raspberry Pi to the Internet, plug in an ethernet cable into the ethernet port next to the USB ports, otherwise skip this step.</li>
+<li>When you are happy that you have plugged in all the cables and SD card required, finally plug in the micro USB power supply. This action will turn on and boot your Raspberry Pi.</li>
+</ol>
+</div>
+<div class="section" id="logging-into-your-raspberry-pi">
+<h2>Logging into your Raspberry Pi<a class="headerlink" href="#logging-into-your-raspberry-pi" title="Permalink to this headline">¶</a></h2>
+<p>Once your Raspberry Pi has completed the boot process, a login prompt will
+appear. The default login for Raspbian is username <strong>pi</strong> with the password
+<strong>raspberry</strong>. Note you will not see any writing appear when you type the
+password. This is a security feature in Linux.</p>
+<p>After you have successfully logged in, you will see the command line prompt
+<em>pi&#64;raspberrypi~$</em></p>
+</div>
+<div class="section" id="rasbian-configuration-tool">
+<h2>Rasbian configuration tool<a class="headerlink" href="#rasbian-configuration-tool" title="Permalink to this headline">¶</a></h2>
 <p>Once you succesfully log in the Raspberry, start the rasbian configuration tool:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo raspi-config
+<div class="highlight-bash"><div class="highlight"><pre>sudo raspi-config
 </pre></div>
 </div>
 <p><strong>Re-size to file-system to use the entire SD card</strong></p>
@@ -173,50 +196,34 @@
 </div></blockquote>
 </div>
 <div class="section" id="change-the-root-password">
-<h1>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo passwd
+<h2>Change the root password<a class="headerlink" href="#change-the-root-password" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>sudo passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-the-password-of-the-pi-user">
-<h1>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>passwd
+<h2>Change the password of the pi user<a class="headerlink" href="#change-the-password-of-the-pi-user" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>passwd
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-repositories">
-<h1>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
-</pre></div>
-</div>
-</div>
-<div class="section" id="assign-a-static-ip-address-to-wlan0">
-<h1>Assign a static ip address to wlan0<a class="headerlink" href="#assign-a-static-ip-address-to-wlan0" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo nano /etc/network/interfaces
-</pre></div>
-</div>
-<p>set the following lines of code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># for Internet Connection Sharing</span>
-
-auto wlan0
-iface wlan0 inet static
-   address 192.168.1.1
-   netmask 255.255.255.0
-   gateway 192.168.1.1
+<h2>Update repositories<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get update
 </pre></div>
 </div>
 </div>
 <div class="section" id="tp-link-tl-wn725n-model">
-<h1>TP-LINK TL-WN725N model<a class="headerlink" href="#tp-link-tl-wn725n-model" title="Permalink to this headline">¶</a></h1>
+<h2>TP-LINK TL-WN725N model<a class="headerlink" href="#tp-link-tl-wn725n-model" title="Permalink to this headline">¶</a></h2>
 <p>In case your Wi-Fi USB dongle is the TP-Link tl-wn725n model, please follow these steps:</p>
 <p>Use command uname -a to find the kernel version</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo  uname -a
+<div class="highlight-bash"><div class="highlight"><pre>sudo  uname -a
 </pre></div>
 </div>
 <p>For example, for the Pi 2 B or 3 B, if uname -a shows <strong>Linux raspberrypi 4.4.8-v7+ #881 SMP Sat Apr 30 12:16:50 BST 2016 armv7l GNU/Linux</strong> the file to download is 8188eu-4.4.8-v7-881.tar.gz</p>
 <p>Find the driver that corresponds to you, according to the model of kernel. <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=62371" target="_blank">Here</a></p>
 <p>Download and install driver</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-4.4.8-v7-881.tar.gz
+<div class="highlight-bash"><div class="highlight"><pre>sudo wget https://dl.dropboxusercontent.com/u/80256631/8188eu-4.4.8-v7-881.tar.gz
 sudo tar xzf 8188eu-4.4.8-v7-881.tar.gz
 sudo ./install.sh
 sudo reboot
@@ -227,6 +234,7 @@ sudo reboot
 <p class="last">Replace the <strong>80256631/8188eu-4.4.8-v7-881.tar.gz</strong> with the appropriate file  to your own kernel</p>
 </div>
 </div>
+</div>
 
 
            </div>
@@ -235,10 +243,10 @@ sudo reboot
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dnsmasq.html" class="btn btn-neutral float-right" title="Install DNSMASQ server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="accessPoint.html" class="btn btn-neutral float-right" title="Making a Wi-Fi Access Point" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="logging.html" class="btn btn-neutral" title="Logging into your Raspberry Pi" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="writingSD.html" class="btn btn-neutral" title="Writing an image to the SD card" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

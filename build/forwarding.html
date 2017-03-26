@@ -83,14 +83,21 @@
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download a MAZI SD card image</a></li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="required.html">What you will need</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="writingSD.html">Writing an image to the SD card</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Initial setup</a></li>
+</ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="accessPoint.html">Making a Wi-Fi Access Point</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#what-you-will-need">What you will need</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#initial-setup">Initial setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessPoint.html#setup-wifi-access-point">Setup  WIFI Access Point</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessPoint.html#installing-dnsmasq-server-and-hostapd">Installing DNSMASQ server and Hostapd</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="accessPoint.html#add-internet-forwarding">Add internet forwarding</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Turn on IP forwarding</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Turn on IP forwarding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-a-routing-rule-for-forwarding-internet">Add a routing rule for forwarding internet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#save-the-iptables-rules">Save the iptables rules</a></li>
 </ul>
@@ -149,33 +156,33 @@
             
   <div class="section" id="turn-on-ip-forwarding">
 <span id="forwarding"></span><h1>Turn on IP forwarding<a class="headerlink" href="#turn-on-ip-forwarding" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span> <span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span> <span class="p">|</span> sudo tee /proc/sys/net/ipv4/ip_forward
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-a-routing-rule-for-forwarding-internet">
 <h1>Add a routing rule for forwarding internet<a class="headerlink" href="#add-a-routing-rule-for-forwarding-internet" title="Permalink to this headline">¶</a></h1>
 <p>If you want to forward traffic from ethernet</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </pre></div>
 </div>
 <p>If you want to forward traffic from antenna</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
+<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
 </pre></div>
 </div>
 </div>
 <div class="section" id="save-the-iptables-rules">
 <h1>Save the iptables rules<a class="headerlink" href="#save-the-iptables-rules" title="Permalink to this headline">¶</a></h1>
 <p>Install the iptables-persistent package</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install iptables-persistent
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install iptables-persistent
 </pre></div>
 </div>
 <p>Using this command to give you root user privileges</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo su
+<div class="highlight-bash"><div class="highlight"><pre>sudo su
 </pre></div>
 </div>
 <p>Type this command to save the rules</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>iptables-save &gt; /etc/iptables/rules.v4
+<div class="highlight-bash"><div class="highlight"><pre>iptables-save &gt; /etc/iptables/rules.v4
 </pre></div>
 </div>
 </div>

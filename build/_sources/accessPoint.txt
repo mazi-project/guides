@@ -3,29 +3,12 @@
 Making a Wi-Fi Access Point
 ===========================
 
-What you will need
-------------------
+Setup  WIFI Access Point
+------------------------
 .. toctree::
    :maxdepth: 1
 
-   required
-
-Installation
-------------
-.. toctree::
-   :maxdepth: 1
-
-   image
-   writingSD
-   plugging
-   logging   
-
-Initial setup
--------------
-.. toctree::
-   :maxdepth: 1
-
-   setup
+   wifi-setup
 
 Installing DNSMASQ server and Hostapd
 -------------------------------------
