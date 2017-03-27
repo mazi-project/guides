@@ -95,9 +95,10 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Configuration Captive Portal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configure-dnsmasq">Configure dnsmasq</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-a-web-server">Installing a web server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#replace-the-placeholder-page">Replace the placeholder page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redirecting-every-unknown-user-http-https-traffic-to-the-index-portal">Redirecting every “unknown user” HTTP/HTTPS traffic to the &#8220;index&#8221; portal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redirect-all-to-index-html-via-htaccess-file">Redirect all to index.html via htaccess file</a></li>
 </ul>
 </li>
 </ul>
@@ -147,23 +148,6 @@
   <div class="section" id="configuration-captive-portal">
 <span id="captive"></span><h1>Configuration Captive Portal<a class="headerlink" href="#configuration-captive-portal" title="Permalink to this headline">¶</a></h1>
 <p>Firstly, you need to configure raspberry pi as access point <a class="reference internal" href="accessPoint.html#accesspoint"><span>Making a Wi-Fi Access Point</span></a>.</p>
-<div class="section" id="configure-dnsmasq">
-<h2>Configure dnsmasq<a class="headerlink" href="#configure-dnsmasq" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/dnsmasq.conf
-</pre></div>
-</div>
-<p>Add the following line:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">address</span><span class="o">=</span>/#/10.0.0.1 <span class="c1">#redirect all DNS requests to 10.0.0.1</span>
-</pre></div>
-</div>
-<p>Your final dnsmasq configuration file should include the following:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c1"># MAZI configuration</span>
-<span class="nv">interface</span><span class="o">=</span>wlan0
-dhcp-range<span class="o">=</span>10.0.0.10,10.0.0.200,255.255.255.0,12h
-<span class="nv">address</span><span class="o">=</span>/#/10.0.0.1 <span class="c1">#redirect all DNS requests to 10.0.0.1</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="installing-a-web-server">
 <h2>Installing a web server<a class="headerlink" href="#installing-a-web-server" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install apache2
@@ -195,6 +179,53 @@ sudo nano index.html
 </div>
 <p>Restart apache web server</p>
 <div class="highlight-bash"><div class="highlight"><pre>sudo service apache2 restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="redirecting-every-unknown-user-http-https-traffic-to-the-index-portal">
+<h2>Redirecting every “unknown user” HTTP/HTTPS traffic to the &#8220;index&#8221; portal<a class="headerlink" href="#redirecting-every-unknown-user-http-https-traffic-to-the-index-portal" title="Permalink to this headline">¶</a></h2>
+<p>HTTP redirect rules</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t mangle -N HTTP
+sudo iptables -t mangle -A PREROUTING -i wlan0 -p tcp -m tcp --dport <span class="m">80</span> -j HTTP
+sudo iptables -t mangle -A HTTP -j MARK --set-mark 99
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp -m mark --mark <span class="m">99</span> -m tcp --dport <span class="m">80</span> -j DNAT --to-destination 10.0.0.1
+</pre></div>
+</div>
+<p>HTTPS redirect rules</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t mangle -N HTTPS
+sudo iptables -t mangle -A PREROUTING -i wlan0 -p tcp -m tcp --dport <span class="m">443</span> -j HTTPS
+sudo iptables -t mangle -A HTTPS -j MARK --set-mark 98
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp -m mark --mark <span class="m">98</span> -m tcp --dport <span class="m">443</span> -j DNAT --to-destination 10.0.0.1
+</pre></div>
+</div>
+<p>When you finish, please save the iptables rules with this command</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo iptables-save <span class="p">|</span> sudo tee /etc/iptables/rules.v4
+</pre></div>
+</div>
+</div>
+<div class="section" id="redirect-all-to-index-html-via-htaccess-file">
+<h2>Redirect all to index.html via htaccess file<a class="headerlink" href="#redirect-all-to-index-html-via-htaccess-file" title="Permalink to this headline">¶</a></h2>
+<p>Enable and load mod_rewrite</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo a2enmod rewrite
+</pre></div>
+</div>
+<p>Then open up the following file, and replace  &#8220;AllowOverride None&#8221; with &#8220;AllowOverride all&#8221;</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /etc/apache2/apache2.conf
+</pre></div>
+</div>
+<p>Restart apache web server</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo service apache2 restart
+</pre></div>
+</div>
+<p>Finally, create a secret file .htaccess and import the following lines of code</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo nano /var/www/html/.htaccess
+</pre></div>
+</div>
+<p>Add the follow code</p>
+<div class="highlight-bash"><div class="highlight"><pre>RewriteEngine on
+RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-d
+RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-f
+RewriteRule . index.html <span class="o">[</span>L<span class="o">]</span>
 </pre></div>
 </div>
 </div>
