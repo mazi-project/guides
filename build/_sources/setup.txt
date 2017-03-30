@@ -39,7 +39,7 @@ After you have successfully logged in, you will see the command line prompt
 *pi@raspberrypi~$*
 
 
-
+.. image:: ../_static/pi@.png
 
 
 
@@ -51,6 +51,9 @@ Once you succesfully log in the Raspberry, start the rasbian configuration tool:
 .. code-block:: bash
   
     sudo raspi-config
+
+.. image:: ../_static/raspi-config.png
+
 
 **Re-size to file-system to use the entire SD card** 
 

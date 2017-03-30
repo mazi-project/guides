@@ -97,7 +97,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Configuration Captive Portal</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installing-a-web-server">Installing a web server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#replace-the-placeholder-page">Replace the placeholder page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#redirecting-every-unknown-user-http-https-traffic-to-the-index-portal">Redirecting every “unknown user” HTTP/HTTPS traffic to the &#8220;index&#8221; portal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redirect-every-user-via-iptables-rules">Redirect every user via iptables rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#redirect-all-to-index-html-via-htaccess-file">Redirect all to index.html via htaccess file</a></li>
 </ul>
 </li>
@@ -182,8 +182,8 @@ sudo nano index.html
 </pre></div>
 </div>
 </div>
-<div class="section" id="redirecting-every-unknown-user-http-https-traffic-to-the-index-portal">
-<h2>Redirecting every “unknown user” HTTP/HTTPS traffic to the &#8220;index&#8221; portal<a class="headerlink" href="#redirecting-every-unknown-user-http-https-traffic-to-the-index-portal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="redirect-every-user-via-iptables-rules">
+<h2>Redirect every user via iptables rules<a class="headerlink" href="#redirect-every-user-via-iptables-rules" title="Permalink to this headline">¶</a></h2>
 <p>HTTP redirect rules</p>
 <div class="highlight-bash"><div class="highlight"><pre>sudo iptables -t mangle -N HTTP
 sudo iptables -t mangle -A PREROUTING -i wlan0 -p tcp -m tcp --dport <span class="m">80</span> -j HTTP
@@ -221,7 +221,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp -m mark --mark <span class="m
 <div class="highlight-bash"><div class="highlight"><pre>sudo nano /var/www/html/.htaccess
 </pre></div>
 </div>
-<p>Add the follow code</p>
+<p>Code of .htaccess file</p>
 <div class="highlight-bash"><div class="highlight"><pre>RewriteEngine on
 RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-d
 RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> !-f

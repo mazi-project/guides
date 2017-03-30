@@ -55,8 +55,8 @@ Restart apache web server
  sudo service apache2 restart
 
 
-Redirecting every “unknown user” HTTP/HTTPS traffic to the "index" portal
--------------------------------------------------------------------------
+Redirect every user via iptables rules
+--------------------------------------
 
 HTTP redirect rules
 
@@ -110,7 +110,7 @@ Finally, create a secret file .htaccess and import the following lines of code
 
   sudo nano /var/www/html/.htaccess
 
-Add the follow code 
+Code of .htaccess file
 
 .. code-block:: bash
 
