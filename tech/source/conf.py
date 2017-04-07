@@ -131,7 +131,8 @@ html_theme_path = ["."]
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = '_static/mazi_logo.jpg'
+html_logo = '_static/Mazi-Logo.png'
+#html_logo = '_static/photo2.png'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
