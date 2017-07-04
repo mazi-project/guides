@@ -1,7 +1,35 @@
 .. _writingSD :
 
-Writing an image to the SD card
-===============================
+Writing an image to the microSD card
+======================================
+
+In this section you can find information on how to write an image to your microSD card. 
+The image could be a default Raspbian operating system if you are starting from scratch to build your MAZI Zone, or a |mazi-img| if you want to have full support and
+receive the latest developments of the project.
+
+.. |mazi-img| raw:: html
+
+   <a href="http://nitlab.inf.uth.gr/mazi-guides/download.html" target="_blank">ready-made MAZI toolkit image</a>
+
+**For OS X**
+
+1. Download and Install Etcher from |etcher|
+
+.. |etcher| raw:: html
+
+   <a href="https://etcher.io/" target="_blank">https://etcher.io</a>
+
+2. Open etcher and click *Select Image* to choose the mazi img file.
+
+
+3. Choose SD Card as Drive.
+
+.. image:: _static/etcher.jpg
+
+4. Click *Flash!*
+
+
+As soon as the process is finished mount the SD card on the Raspberry Pi and turn it on.
 
 **For Linux**
 
@@ -63,25 +91,4 @@ Download |win32| application for flashing the SD card
 
 
 .. image:: _static/photo3.png
-
-
-**For OS X**
-
-1. Download and Install Etcher from |etcher|
-
-.. |etcher| raw:: html
-
-   <a href="https://etcher.io/" target="_blank">https://etcher.io</a>
-
-2. Open etcher and click *Select Image* to choose the mazi img file.
-
-
-3. Choose SD Card as Drive.
-
-.. image:: _static/etcher.jpg
-
-4. Click *Flash!*
-
-
-As soon as the process is finished mount the SD card on the Raspberry Pi and turn it on.
 

@@ -1,57 +1,77 @@
 .. _download :
 
-Download a MAZI SD card image 
-=============================
+Download a ready-made MAZI image 
+================================
 
-In this section you can choose one of the SD card images available from the table below. 
-According to your hardware equipment you can download the respective image from the repository of MAZI images |here|, load it on your SD card and deploy your toolkit. 
+In this section you can choose one of the SD card images available from the table below.
 The procedure of loading an image on a SD card is straightforward and described in details in :ref:`writingSD`.
 
-.. |here| raw:: html
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                  MAZI toolkit images                                                                                                                                      |
++=========+==========================+===================================================================================================================+==================================+
+| Release | Type                     | What's new                                                                                                        | Notes                            |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.7.1   |  New Features, Bug fixes |  New Devices tab (sensors, camera), bug fixes, new log file, warning message in init page                         | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.7|   | New Features             |  Reboot button, shutdown button, support for more USB Wi-Fi antennas                                              | Recommended for all new installs |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.6.7   | New Features             |  Delete snapshot functionality, connect to hidden network, connect to passwordless network, edit admin username   | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.6.6   |  New Features, Bug fixes |  New Interview export functionality, bug fixes                                                                    | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.6.5| | New features             | Statistics menu (CPU, RAM, Storage etc.), time/date in user portal                                                | Major Update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.6.4   | Bug fixes                | Bug fixes in update functionality                                                                                 | Minor update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.6.3   | New features             | New one-click update functionality for the MAZI Portal                                                            | Minor update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.6.2   | Visual fixes             |                                                                                                                   | Minor update                     | 
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.6.1   | New features             | New first contact functionality, new configuration menu, merge saving/loading theme with saving/loading settings, | Update                           |
+|         |                          | fix application clicks                                                                                            |                                  | 
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.6|   | Stable Release           | User Documentation updated, Admin Documentation updated, Guestbook updated, Etherpad plugins                      | Major update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.5.5   | Visual/bug Fixes Release | Typos, fixed dual mode box in Networking, no password in demo mode, footer removal                                | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.5.4| | New application Release  | Integration of Interview Archive application                                                                      | Minor update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.5.3| | Visual/bug Fixes Release | Typos, Upload/Download snapshot, Visual fixes, new demo mode, Admin change password form                          | Minor update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.5.2| | Visual/bug Fixes Release |                                                                                                                   |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.5|   | First Public Release     |                                                                                                                   |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 
-	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1" target="_blank">here</a>
+.. |1.7| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v1.7.zip" target="_blank">1.7</a>
+
+.. |1.6.5| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v1.6.5.zip" target="_blank">1.6.5</a>
+
+.. |1.6| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v1.6.zip" target="_blank">1.6</a>
+
+.. |1.5.4| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1.5/mazizone-v1.5.4.zip" target="_blank">1.5.4</a>
+
+.. |1.5.3| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1.5/mazizone-v1.5.3.zip" target="_blank">1.5.3</a>
+
+.. |1.5.2| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1.5/mazizone-v1.5.2.zip" target="_blank">1.5.2</a>
+
+.. |1.5| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1.5/mazizone-v1.5.zip" target="_blank">1.5</a>
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                 MAZI toolkit v1 SD card images                                  												          |
-+============================================================================================================================+=================+=======================+=============+=======+============+
-|Name                        												     |Device           |Wi-Fi module           |OS           |SD card|Applications|
-+----------------------------------------------------------------------------------------------------------------------------+-----------------+-----------------------+-------------+-------+------------+       
-|                            												     |                 |pi3 + no wifi module or|             |       |- Etherpad  |
-|`mazizone_v1.zip <http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1.zip>`_					     |Raspberry pi3 or |pi2 with |wn722n| or   |Raspbian     |4GB    |- Limesurvey|
-|                            												     | Raspberry pi2   |pi2 with |wn8200nd|    |Jessie Lite  |       |- Owncloud  |
-+----------------------------------------------------------------------------------------------------------------------------+-----------------+-----------------------+-------------+-------+------------+
-|                       												     |                 |                       |             |       |- Etherpad  |
-|`mazizone_v1_antenna.zip <http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1_antenna.zip>`_			     | Raspberry pi3   ||wn722n| or |wn8200nd| |Raspbian     |4GB    |- Limesurvey|
-|                           												     |                 |                       |Jessie Lite  |       |- Owncloud  |
-+----------------------------------------------------------------------------------------------------------------------------+-----------------+-----------------------+-------------+-------+------------+
-|                        												     |                 |                       |             |       |- Etherpad  |
-|`mazizone_v1_wn725n_pi3.zip <http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1_wn725n_pi3.zip>`_		     | Raspberry pi3   |  |tlwn725n|           |Raspbian     |8GB    |- Limesurvey|
-|                           												     |                 |                       |Jessie Lite  |       |- Owncloud  |
-+----------------------------------------------------------------------------------------------------------------------------+-----------------+-----------------------+-------------+-------+------------+
-|                           												     |                 |                       |             |       |- Etherpad  |
-|`mazizone_v1_wn725n_pi2.zip <http://nitlab.inf.uth.gr/mazi-img/MAZI-toolkit-v1/mazizone_v1_wn725n_pi2.zip>`_		     | Raspberry pi2   |  |tlwn725n|           |Raspbian     |8GB    |- Limesurvey|
-|                            												     |                 |                       |Jessie Lite  |       |- Owncloud  |
-+----------------------------------------------------------------------------------------------------------------------------+-----------------+-----------------------+-------------+-------+------------+
-
-.. |wn722n| raw:: html
-
-	<a href="http://www.tp-link.com/en/products/details/cat-11_TL-WN722N.html" target="_blank">TL-WN722N</a>
-
-
-.. |wn8200nd| raw:: html
-
-	<a href="http://www.tp-link.com/ph/products/details/cat-11_TL-WN8200ND.html" target="_blank">TL-WN8200ND</a>
-
-.. |tlwn725n| raw:: html
-
-	<a href="http://www.tp-link.com/en/products/details/TL-WN725N.html" target="_blank">TL-WN725N</a>
-
-
-
-
-
-You can find here a full list of the available |images|.
 
 .. |images| raw:: html
 	

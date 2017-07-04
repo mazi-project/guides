@@ -1,10 +1,10 @@
 .. _accessPoint :
 
-Making a Wi-Fi Access Point
+Setting up a Wi-Fi Access Point
 ===========================
 
-Setup  WIFI Access Point
-------------------------
+Setup a Wi-Fi Access Point in the Raspberry 
+--------------------------------------------
 
 Assign a static ip address to wlan0
 
@@ -25,18 +25,18 @@ Set the following lines of code:
       netmask 255.255.255.0
       gateway 10.0.0.1
 
-Install DNSMASQ server
+Install dnsmasq server
 ----------------------
 Dnsmasq provides network infrastructure for small networks: DNS, DHCP and network boot
 
-Install DNSMASQ server package
+Install dnsmasq server package
 
 .. code-block:: bash
 
    sudo apt-get install dnsmasq
 
 
-Setup the DNSMASQ server
+Setup the dnsmasq server
 We set the range of the IPs that will be assigned to the clients
 
 .. code-block:: bash
@@ -58,7 +58,7 @@ Edit the file Hosts
    10.0.0.1     mazizone
 
 
-Restart the DNSMASQ server
+Restart the dnsmasq server
 
 .. code-block:: bash
 
@@ -101,7 +101,7 @@ add these lines of code:
 
 .. note::
 
-   In case you want a access point without password  add a # in front of the line with wpa
+   In case you want a access point without password  add a # in front of all the lines starting with wpa
 
 
 Start the access point by running hostapd
@@ -120,13 +120,21 @@ Or run hostapd in the background
    sudo hostapd -B /etc/hostapd/hostapd.conf
 
 .. note::
-   In case the hostapd cannot start, you should bring down the wlan0 interface, then bring it up again and restart the dnsmasq server.
+   In case the hostapd is not starting, you should bring down the wlan0 interface, then bring it up again and restart the dnsmasq server.
 
 .. code-block:: bash
 
    sudo ifdown wlan0
    sudo ifup wlan0
    sudo service dnsmasq restart
+
+
+.. note::
+   For the configuration of the Wi-Fi Access Point you can also use the MAZI backend script *mazi-wifiap.sh*. Check more info |here|.
+
+.. |here| raw:: html
+
+   <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
 
 
 Add internet forwarding
@@ -169,6 +177,12 @@ Type this command to save the rules
 
    sudo iptables-save | sudo tee /etc/iptables/rules.v4
 
+.. note::
+   For the configuration of Internet Forwarding you can also use the MAZI backend script *mazi-.sh*. Check more info |here|.
+
+.. |here| raw:: html
+
+   <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
 
 Start everything at boot
 ------------------------
