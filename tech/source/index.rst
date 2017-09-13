@@ -44,7 +44,7 @@ Initial setup
    setup
 
 
-Making a Wi-Fi Access Point
+Settng up a Wi-Fi Access Point
 ---------------------------
 .. toctree::
    :maxdepth: 1
@@ -52,7 +52,14 @@ Making a Wi-Fi Access Point
    accessPoint
 
 
-Configuration Captive Portal
+Setting up Internet Forwarding
+------------------------------
+.. toctree::
+   :maxdepth: 1
+
+   internet
+
+Configuring a Captive Portal
 ----------------------------
 .. toctree::
    :maxdepth: 1

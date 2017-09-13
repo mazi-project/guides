@@ -128,6 +128,8 @@ Or run hostapd in the background
    sudo ifup wlan0
    sudo service dnsmasq restart
 
+MAZI backend
+------------
 
 .. note::
    For the configuration of the Wi-Fi Access Point you can also use the MAZI backend script *mazi-wifiap.sh*. Check more info |here|.
@@ -136,53 +138,26 @@ Or run hostapd in the background
 
    <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
 
+Examples of *mazi-wifiap.sh* usage:
 
-Add internet forwarding
------------------------
-
-Turn on IP forwarding
+* Set the Wi-Fi SSID to **mazizone**, the channel to **6** and the password to **"mazizone"**.
 
 .. code-block:: bash
 
-   echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
+   sudo sh mazi-wifiap.sh -s mazizone -c 6 -p mazizone
 
-Add a routing rule for forwarding internet
-
-In case you want to forward traffic from ethernet 
+* Set the Wi-Fi SSID to **John**
 
 .. code-block:: bash
 
-   sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+   sudo sh mazi-wifiap.sh -s John
 
-
-If you want to forward traffic from external wifi dongle 
-
-.. code-block:: bash
-
-   sudo iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
-
-
-Save the iptables rules
-
-Install the iptables-persistent package
+* Change the password of the Wi-Fi network to **pass**
 
 .. code-block:: bash
 
-   sudo apt-get install iptables-persistent
+   sudo sh mazi-wifiap.sh -p pass
 
-
-Type this command to save the rules
-
-.. code-block:: bash
-
-   sudo iptables-save | sudo tee /etc/iptables/rules.v4
-
-.. note::
-   For the configuration of Internet Forwarding you can also use the MAZI backend script *mazi-.sh*. Check more info |here|.
-
-.. |here| raw:: html
-
-   <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
 
 Start everything at boot
 ------------------------

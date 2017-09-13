@@ -1,6 +1,6 @@
 .. _wifi-setup
 
-Setup  WIFI Access Point
+Setup the Wi-Fi Access Point
 ========================
 
 Assign a static ip address to wlan0
