@@ -30,7 +30,7 @@ What you will need
    required
    
 Writing an image to the SD card
--------------------------------         
+---------------------------------         
 .. toctree::
    :maxdepth: 1
 
@@ -45,7 +45,7 @@ Initial setup
 
 
 Settng up a Wi-Fi Access Point
----------------------------
+-------------------------------
 .. toctree::
    :maxdepth: 1
 
@@ -65,6 +65,27 @@ Configuring a Captive Portal
    :maxdepth: 1
    
    captive
+
+Sensors
+-------
+.. toctree::
+   :maxdepth: 1
+   
+   sense
+
+Statistics
+-----------
+.. toctree::
+   :maxdepth: 1
+   
+   stats
+
+Portal
+-------
+.. toctree::
+   :maxdepth: 1
+   
+   portal
 
 
 Indices and tables

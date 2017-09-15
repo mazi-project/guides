@@ -1,7 +1,7 @@
 .. _accessPoint :
 
 Setting up a Wi-Fi Access Point
-===========================
+=================================
 
 Setup a Wi-Fi Access Point in the Raspberry 
 --------------------------------------------
@@ -132,7 +132,7 @@ MAZI backend
 ------------
 
 .. note::
-   For the configuration of the Wi-Fi Access Point you can also use the MAZI backend script *mazi-wifiap.sh*. Check more info |here|.
+   For the configuration of the Wi-Fi Access Point you can also use the MAZI backend script **mazi-wifiap.sh**. Check more info |here|.
 
 .. |here| raw:: html
 
@@ -157,6 +157,74 @@ Examples of *mazi-wifiap.sh* usage:
 .. code-block:: bash
 
    sudo sh mazi-wifiap.sh -p pass
+
+.. note::
+   After connecting an external USB Wi-Fi Adapter (check |here5| for compatible products), you can configure it using the MAZI backend script **mazi-antenna.sh**. Check more info |here2|.
+
+.. |here5| raw:: html
+
+   <a href="https://github.com/mazi-project/guides/wiki/Products" target=_"blank">here</a>
+
+.. |here2| raw:: html
+
+   <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
+
+Examples of *mazi-antenna.sh* usage:
+
+* List the available Wi-Fi networks in range of the toolkit
+
+.. code-block:: bash
+
+   sudo sh mazi-antenna.sh -l
+
+* Connect to the Wi-Fi "mazi-network" with password "mazi-pass"
+
+.. code-block:: bash
+
+   sudo sh mazi-antenna.sh -s mazi-network -p mazi-pass
+
+* Connect to hidden Wi-Fi network "mazi-test"
+
+.. code-block:: bash
+
+   sudo sh mazi-antenna.sh -h -s mazi-test
+
+.. note::
+   After connecting an external OpenWRT Wireless Router (check |here3| for compatible products), you can use it as a Wi-Fi Access Point instead of the on-board Wi-Fi antenna of the Raspberry for better network characteristics (coverage, speed etc.). The corresponding MAZI backend script is **mazi-router.sh**. Check more info |here4|.
+
+.. |here3| raw:: html
+
+   <a href="https://github.com/mazi-project/guides/wiki/Products" target=_"blank">here</a>
+
+.. |here4| raw:: html
+
+   <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
+
+First, install requirements
+
+.. code-block:: bash
+
+   sudo apt-get install sshpass
+
+Examples of *mazi-router.sh* usage:
+
+* Display the status of the router (connected or not)
+
+.. code-block:: bash
+
+   sudo sh mazi-router.sh -s
+
+* Activate the Router with the current hostapd settings
+
+.. code-block:: bash
+
+   sudo sh mazi-router.sh -a
+
+* Deactivate the Router and move the Access Point the on-board Wi-Fi antenna
+
+.. code-block:: bash
+
+   sudo sh mazi-router.sh -d
 
 
 Start everything at boot

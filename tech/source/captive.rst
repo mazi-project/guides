@@ -2,8 +2,8 @@
 
 
 
-Configuration Captive Portal
-============================
+Configuring the Captive Portal
+===============================
 
 
 Firstly, you need to configure raspberry pi as access point :ref:`accessPoint`.
@@ -91,4 +91,21 @@ Code of .htaccess file
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f 
   RewriteRule . index.html [L]
- 
+
+MAZI backend
+------------
+
+.. note::
+   For the configuration of the MAZI toolkit domain you can use the MAZI backend script **mazi-domain.sh**. Check more info |here|.
+
+.. |here| raw:: html
+
+   <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
+
+Examples of *mazi-domain.sh* usage:
+
+* Set the domain to **new.domain.local**
+
+.. code-block:: bash
+
+   sudo sh mazi-domain.sh -d new.domain.local
