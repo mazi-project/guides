@@ -41,7 +41,7 @@ Paste the following
 
  <html>
         <head>
-                <meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/your-new-page">
+                <meta HTTP-EQUIV="REFRESH" content="0; url=http://portal.mazizone.eu">
         </head>
         <body>
         </body>

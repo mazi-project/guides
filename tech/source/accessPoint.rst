@@ -54,8 +54,9 @@ Edit the file Hosts
 
    sudo nano /etc/hosts
 
-   #ADD THE FOLLOWING LINE AT THE BOTTOM
-   10.0.0.1     mazizone
+   #ADD THE FOLLOWING LINES AT THE BOTTOM
+   10.0.0.1	local.mazizone.eu
+   10.0.0.1	portal.mazizone.eu
 
 
 Restart the dnsmasq server
@@ -131,6 +132,9 @@ Or run hostapd in the background
 MAZI backend
 ------------
 
+mazi-wifiap.sh
+^^^^^^^^^^^^^^^
+
 .. note::
    For the configuration of the Wi-Fi Access Point you can also use the MAZI backend script **mazi-wifiap.sh**. Check more info |here|.
 
@@ -138,7 +142,7 @@ MAZI backend
 
    <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
 
-Examples of *mazi-wifiap.sh* usage:
+Examples:
 
 * Set the Wi-Fi SSID to **mazizone**, the channel to **6** and the password to **"mazizone"**.
 
@@ -158,6 +162,9 @@ Examples of *mazi-wifiap.sh* usage:
 
    sudo sh mazi-wifiap.sh -p pass
 
+mazi-antenna.sh
+^^^^^^^^^^^^^^^^
+
 .. note::
    After connecting an external USB Wi-Fi Adapter (check |here5| for compatible products), you can configure it using the MAZI backend script **mazi-antenna.sh**. Check more info |here2|.
 
@@ -169,7 +176,7 @@ Examples of *mazi-wifiap.sh* usage:
 
    <a href="https://github.com/mazi-project/back-end" target=_"blank">here</a>
 
-Examples of *mazi-antenna.sh* usage:
+Examples:
 
 * List the available Wi-Fi networks in range of the toolkit
 
@@ -189,6 +196,9 @@ Examples of *mazi-antenna.sh* usage:
 
    sudo sh mazi-antenna.sh -h -s mazi-test
 
+mazi-router.sh
+^^^^^^^^^^^^^^^
+
 .. note::
    After connecting an external OpenWRT Wireless Router (check |here3| for compatible products), you can use it as a Wi-Fi Access Point instead of the on-board Wi-Fi antenna of the Raspberry for better network characteristics (coverage, speed etc.). The corresponding MAZI backend script is **mazi-router.sh**. Check more info |here4|.
 
@@ -206,7 +216,7 @@ First, install requirements
 
    sudo apt-get install sshpass
 
-Examples of *mazi-router.sh* usage:
+Examples:
 
 * Display the status of the router (connected or not)
 
@@ -241,8 +251,6 @@ The code which you will import to the rc.local file
 
 .. code-block:: bash
 
-   echo "1"| sudo tee /proc/sys/net/ipv4/ip_forward
-   
    /sbin/ifconfig wlan0 10.0.0.1
    sudo ifdown wlan0
    sleep 1

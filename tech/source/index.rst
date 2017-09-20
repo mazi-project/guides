@@ -6,11 +6,18 @@
 Welcome to mazi-guides!
 =======================
 
-This tutorial aims at helping advanced MAZI toolkit owners to understand and make by themselves various software/network configurations in order to deploy a Mazizone.
+This tutorial aims at helping advanced MAZI toolkit owners to understand and make by themselves various software/network configurations in order to deploy a MAZI Zone.
 
-Moreover, a novice MAZI toolkit owner can simply download a ready-to-go SD card image and deploy a Mazizone.
+Moreover, a novice MAZI toolkit owner can simply download a ready-to-go SD card image and deploy a MAZI Zone.
 
 
+What you will need 
+------------------
+.. toctree::
+   :maxdepth: 1
+   
+   required
+ 
 Download a MAZI SD card image
 -----------------------------
 
@@ -21,15 +28,8 @@ In this section, you can find links with SD card images with all the configurati
 
    download
 
-
-What you will need 
-------------------
-.. toctree::
-   :maxdepth: 1
-   
-   required
-   
-Writing an image to the SD card
+  
+Writing an image to your SD card
 ---------------------------------         
 .. toctree::
    :maxdepth: 1
@@ -44,7 +44,7 @@ Initial setup
    setup
 
 
-Settng up a Wi-Fi Access Point
+Setting up a Wi-Fi Access Point
 -------------------------------
 .. toctree::
    :maxdepth: 1
@@ -66,6 +66,13 @@ Configuring a Captive Portal
    
    captive
 
+MAZI Portal
+----------
+.. toctree::
+   :maxdepth: 1
+   
+   portal
+
 Sensors
 -------
 .. toctree::
@@ -80,18 +87,11 @@ Statistics
    
    stats
 
-Portal
--------
-.. toctree::
-   :maxdepth: 1
-   
-   portal
 
+.. Indices and tables
+.. ==================
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
 

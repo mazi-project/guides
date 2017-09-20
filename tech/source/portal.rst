@@ -1,10 +1,74 @@
 .. _portal :
 
-Portal
-======
+MAZI Portal
+============
+
+The MAZI Portal is the software interface of the MAZI toolkit and comprises of the User page and the Administration Panel.
+
+* User Page (demo.mazizone.eu): Through the User Page the user of the MAZI Zone is able to access the available applications, as well as useful statistics
+* Administration Panel (demo.mazizone.eu:4567/admin): Through the Administration Panel the admin of the MAZI Zone is able to make all the configurations of the MAZI node
+
+After following all the above sections for setting up the networking components of the toolkit, you can install the MAZI Portal following the instructions of this section.
 
 Install MAZI Portal
 -------------------
+
+Install the following packages:
+
+.. code-block:: bash
+
+   apt-get update
+   apt-get install build-essential git-core libsqlite3-dev ruby ruby-dev libmysqlclient-dev
+
+Also install the following gems:
+
+.. code-block:: bash
+
+   gem install sinatra sequel sqlite3 rake thin rubyzip mysql --no-ri --no-rdoc
+
+And download the back-end scripts
+
+.. code-block:: bash
+
+   sudo su
+   cd /root
+   git clone git@github.com:mazi-project/back-end.git
+
+Installation
+------------
+
+.. code-block:: bash
+
+   sudo su
+   cd /root
+   git clone git@github.com:mazi-project/portal.git
+   cd portal
+   rake init
+   rake db:migrate
+
+Execution
+---------
+
+.. code-block:: bash
+
+   ruby -I lib -I database mazi_portal_server.rb
+
+Update
+-------
+
+Since version 1.6.4 there is an update button in the Administration Panel. It is **strongly recommended** to use this update functionality, but if you still insist to update the Portal using the command line, you need to execute the following commands:
+
+.. code-block:: bash
+
+   sudo su
+   cd /root/portal
+   git pull origin master
+   rake db:migrate
+   cp /etc/mazi/config.yml /etc/mazi/config.yml.bu
+   cp etc/config.yml /etc/mazi/config.yml
+   cd /root/back-end
+   git pull origin master
+   service mazi-portal restart
 
 
 MAZI backend

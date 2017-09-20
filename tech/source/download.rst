@@ -11,9 +11,14 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.8.5| |  New Features, Bug fixes |  Configure MAZI domain, new External Router functionality, update User Documentation, export Guestbook content,   | Recommended for all new installs |
+|         |                          |  calendar in sensors, default snapshot, other bug fixes                                                           |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.8|   |  New Features            |  Integration of camera functionality (devices tab), fix timezone bug, other bug fixes                             | Major Update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | 1.7.1   |  New Features, Bug fixes |  New Devices tab (sensors, camera), bug fixes, new log file, warning message in init page                         | Update                           |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |1.7|   | New Features             |  Reboot button, shutdown button, support for more USB Wi-Fi antennas                                              | Recommended for all new installs |
+| |1.7|   | New Features             |  Reboot button, shutdown button, support for more USB Wi-Fi antennas                                              | Major Update                     |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | 1.6.7   | New Features             |  Delete snapshot functionality, connect to hidden network, connect to passwordless network, edit admin username   | Update                           |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
@@ -42,6 +47,15 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+.. |1.8.5| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v1.8.5.zip" target="_blank">1.8.5</a>
+
+.. |1.8| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v1.8.zip" target="_blank">1.8</a>
+
 
 .. |1.7| raw:: html
 
@@ -83,13 +97,12 @@ The procedure of loading an image on a SD card is straightforward and described 
 	
 	**root user** and **pi user** password:	mazizone
 	
-	**network** SSID: mazizone and no password
+	**Wi-Fi network SSID**: mazizone (no password needed)
 	
-	**Etherpad** user: admin password: mazizone
+	**Etherpad** admin user: admin password: mazizone
 	
-	**Owncloud** user: admin password: mazizone
+	**NextCloud** user: admin password: mazizone
 	
-	**LimeSurvey admin local.mazizone.eu/limesurvey/admin:** user: admin password: mazilime
 
 .. |image| raw:: html
 
