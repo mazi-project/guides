@@ -11,7 +11,11 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |1.8.5| |  New Features, Bug fixes |  Configure MAZI domain, new External Router functionality, update User Documentation, export Guestbook content,   | Recommended for all new installs |
+| |2.0|   |  New Features, Bug fixes | Monitoring framework (sensors, statistics, applications), Guestbook admin interface, Bug fixes                    | Recommended for all new installs |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 1.8.6   |  New Features            | Configure apps as splash screen, backend of Monitoring API                                                        | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |1.8.5| |  New Features, Bug fixes |  Configure MAZI domain, new External Router functionality, update User Documentation, export Guestbook content,   | Major Update                     |
 |         |                          |  calendar in sensors, default snapshot, other bug fixes                                                           |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.8|   |  New Features            |  Integration of camera functionality (devices tab), fix timezone bug, other bug fixes                             | Major Update                     |
@@ -47,6 +51,11 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+.. |2.0| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.zip" target="_blank">2.0</a>
+
 
 .. |1.8.5| raw:: html
 
@@ -96,12 +105,18 @@ The procedure of loading an image on a SD card is straightforward and described 
 	You can find here all the credentials needed for the above images.
 	
 	**root user** and **pi user** password:	mazizone
+
+	**mySQL**: user: root password: m@z1 (editable through the Portal)
 	
-	**Wi-Fi network SSID**: mazizone (no password needed)
+	**Wi-Fi network**: mazizone (no password)
 	
-	**Etherpad** admin user: admin password: mazizone
+	**Etherpad** user: admin password: mazizone
 	
 	**NextCloud** user: admin password: mazizone
+	
+	**Guestbook** user: admin password: mazizone
+	
+	**Interview Archive** user: admin password: mazizone
 	
 
 .. |image| raw:: html
