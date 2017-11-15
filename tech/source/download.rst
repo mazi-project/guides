@@ -11,7 +11,9 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |2.0|   |  New Features, Bug fixes | Monitoring framework (sensors, statistics, applications), Guestbook admin interface, Bug fixes                    | Recommended for all new installs |
+| |2.1|   |  New Features, Bug fixes | Log section, Fix multiple instances feature, add system info in admin dashboard, multiple fixes                   | Recommended for all new installs |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.0|   |  New Features, Bug fixes | Monitoring framework (sensors, statistics, applications), Guestbook admin interface, Bug fixes                    | Major Update                     |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | 1.8.6   |  New Features            | Configure apps as splash screen, backend of Monitoring API                                                        | Update                           |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
@@ -51,6 +53,11 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+.. |2.1| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.1.zip" target="_blank">2.1</a>
+
 
 .. |2.0| raw:: html
 
