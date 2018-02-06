@@ -50,7 +50,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'mazi-guides'
-copyright = u'2016, MAZI project'
+copyright = u'2016-2018, MAZI project'
 author = u'MAZI project'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -58,7 +58,7 @@ author = u'MAZI project'
 # built documents.
 #
 # The short X.Y version.
-version = u'2.1'
+version = u'2.3'
 # The full version, including alpha/beta/rc tags.
 #release = u'1.9'
 

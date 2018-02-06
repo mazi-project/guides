@@ -11,7 +11,14 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |2.1|   |  New Features, Bug fixes | Log section, Fix multiple instances feature, add system info in admin dashboard, multiple fixes                   | Recommended for all new installs |
+| |2.3|   |  New Features, Bug fixes | Major update of the monitoring framework, New Guestbook admin functionalities, Fix Guestbook error reporting,     | Recommended for all new installs |
+|         |                          | New expand filesystem to SD button, full Sensehat support in Portal (gyroscope, accelerometer, compass, pressure),|                                  |
+|         |                          | wrong db in sensor user interface bug fix, fix several other bugs                                                 |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.2|   |  New Features            | i18n support to enable translation, update various messages, show exact amount of disk space used.                | Major Update                     |
+|         |                          | Backend: full sensehat support, support status in rest calls                                                      |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.1|   |  New Features, Bug fixes | Log section, Fix multiple instances feature, add system info in admin dashboard, multiple fixes                   | Major Update                     |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |2.0|   |  New Features, Bug fixes | Monitoring framework (sensors, statistics, applications), Guestbook admin interface, Bug fixes                    | Major Update                     |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
@@ -53,6 +60,15 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+
+.. |2.3| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.3.zip" target="_blank">2.3</a>
+
+.. |2.2| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.2.zip" target="_blank">2.2</a>
 
 .. |2.1| raw:: html
 

@@ -43,6 +43,13 @@ Initial setup
   
    setup
 
+MAZI Backend
+-------------
+.. toctree::
+   :maxdepth: 1
+  
+   backend
+
 
 Setting up a Wi-Fi Access Point
 -------------------------------

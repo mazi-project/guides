@@ -26,13 +26,7 @@ Also install the following gems:
 
    gem install sinatra sequel sqlite3 rake thin rubyzip mysql --no-ri --no-rdoc
 
-And download the back-end scripts
-
-.. code-block:: bash
-
-   sudo su
-   cd /root
-   git clone git@github.com:mazi-project/back-end.git
+Make sure you have cloned the MAZI backend repository (:ref:`backend`).
 
 Installation
 ------------
