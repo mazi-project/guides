@@ -31,9 +31,9 @@ Replacing sdd1 with whatever your SD card's device name is (including the partit
 
 .. code-block:: bash
    
-   sudo dd bs=4M if=2016-05-27-raspbian-jessie.img of=/dev/sdd
+   sudo dd bs=4M if=2016-05-27-raspbian-jessie.img of=/dev/sdd status=progress
 
-6.The **dd** command does not give any information of its progress and so may appear to have frozen.To see the progress of the copy operation you can run in another terminal
+6.The **dd** command only gives information of its progress if you use `status=progress` on the command-line. Otherwise, to see the progress of the copy operation you can send a `USR1` signal to the running process, e.g., run in another terminal
 
 .. code-block:: bash
 
