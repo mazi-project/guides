@@ -34,7 +34,7 @@ After you have successfully logged in, you will see the command line prompt
 *pi@raspberrypi~$*
 
 
-.. image:: ../_static/pi@.png
+.. image:: _static/pi@.png
 
 
 
@@ -47,7 +47,7 @@ Once you succesfully log in the Raspberry, start the rasbian configuration tool:
   
     sudo raspi-config
 
-.. image:: ../_static/raspi-config.png
+.. image:: _static/raspi-config.png
 
 
 And make the following configurations:
