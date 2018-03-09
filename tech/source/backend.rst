@@ -25,7 +25,7 @@ Clone the repository.
 .. code-block:: bash
 
    cd /root
-   git clone git@github.com:mazi-project/back-end.git
+   git clone https://github.com/mazi-project/back-end.git
 
 Finally, install the following requirements:
 
