@@ -20,6 +20,10 @@ Install the following packages:
    apt-get update
    apt-get install build-essential git-core libsqlite3-dev ruby ruby-dev libmysqlclient-dev
 
+
+.. note::
+   For debian stretch (instead of jessie) replace in the command above "libmysqlclient-dev" with "default-libmysqlclient-dev".
+
 Also install the following gems:
 
 .. code-block:: bash
