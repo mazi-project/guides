@@ -35,7 +35,7 @@ Installation
 
    sudo su
    cd /root
-   git clone git@github.com:mazi-project/portal.git
+   git clone https://github.com/mazi-project/portal.git
    cd portal
    rake init
    rake db:migrate
