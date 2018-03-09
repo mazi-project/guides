@@ -25,7 +25,7 @@ add these lines of code:
 
    interface=wlan0
    driver=nl80211
-   ssid=THE_NAME_OF_YOUR_WIFI_NETWORK
+   ssid=YOUR-WIFI-NETWORK
    hw_mode=g
    channel=11
    wpa=1                               
