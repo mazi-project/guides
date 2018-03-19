@@ -44,6 +44,7 @@ Installation
    rake init
    rake db:migrate
    cp init/mazi-portal /etc/init.d/mazi-portal
+   chmod +x /etc/init.d/mazi-portal
    update-rc.d mazi-portal enable
 
 Execution
