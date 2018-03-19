@@ -8,6 +8,12 @@ The MAZI backend has been designed and developed in order to handle low-level co
 Install the MAZI backend
 ------------------------
 
+Become root user.
+
+.. code-block:: bash
+
+	sudo su
+
 Install the following requirements:
 
 .. code-block:: bash
@@ -22,12 +28,6 @@ In order to install the MAZI Backend, you have to clone the repository in your |
 .. |raspbian| raw:: html
 
   <a href="https://www.raspberrypi.org/downloads/raspbian/" target="blank">Raspbian</a>
-
-Become root user.
-
-.. code-block:: bash
-
-   sudo su
 
 Clone the repository.
 

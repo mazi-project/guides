@@ -129,6 +129,26 @@ Or run hostapd in the background
    sudo ifup wlan0
    sudo service dnsmasq restart
 
+Start everything at boot
+------------------------
+
+Add the following lines of code to the rc.local file before exit 0
+
+.. code-block:: bash
+
+   sudo nano /etc/rc.local
+
+
+The code which you will import to the rc.local file 
+
+.. code-block:: bash
+
+   /sbin/ifconfig wlan0 10.0.0.1
+   sudo ifdown wlan0
+   sleep 1
+   hostapd -B /etc/hostapd/hostapd.conf
+   sudo ifconfig wlan0 10.0.0.1
+
 MAZI backend
 ------------
 
@@ -235,26 +255,4 @@ Examples:
 .. code-block:: bash
 
    sudo sh mazi-router.sh -d
-
-
-Start everything at boot
-------------------------
-
-Add the following lines of code to the rc.local file before exit 0
-
-.. code-block:: bash
-
-   sudo nano /etc/rc.local
-
-
-The code which you will import to the rc.local file 
-
-.. code-block:: bash
-
-   /sbin/ifconfig wlan0 10.0.0.1
-   sudo ifdown wlan0
-   sleep 1
-   hostapd -B /etc/hostapd/hostapd.conf
-   sudo ifconfig wlan0 10.0.0.1
-
 
