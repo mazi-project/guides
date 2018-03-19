@@ -8,6 +8,15 @@ The MAZI backend has been designed and developed in order to handle low-level co
 Install the MAZI backend
 ------------------------
 
+Install the following requirements:
+
+.. code-block:: bash
+
+	apt-get install python-pip
+	pip install speedtest-cli
+	apt-get install sshpass
+	apt-get install jq 
+ 
 In order to install the MAZI Backend, you have to clone the repository in your |raspbian| Operating System.
 
 .. |raspbian| raw:: html
@@ -24,16 +33,8 @@ Clone the repository.
 
 .. code-block:: bash
 
-   cd /root
-   git clone https://github.com/mazi-project/back-end.git
+	cd /root
+	git clone https://github.com/mazi-project/back-end.git
+	cd back-end/
 
-Finally, install the following requirements:
-
-.. code-block:: bash
-
-  apt-get install python-pip
-  pip install speedtest-cli
-  apt-get install sshpass
-  apt-get install jq 
- 
 You can now proceed with the rest of the guidelines and take advantage of the MAZI backend in order to control and manage your MAZI Zone. At the end of each of the following sections, you can find examples on the usage of the scripts for the corresponding configuration actions.
