@@ -73,8 +73,16 @@ Configuring a Captive Portal
    
    captive
 
+
+Applications
+------------
+.. toctree::
+    :maxdepth: 1
+
+    apps
+
 MAZI Portal
-----------
+------------
 .. toctree::
    :maxdepth: 1
    

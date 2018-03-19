@@ -43,13 +43,15 @@ Installation
    cd portal
    rake init
    rake db:migrate
+   cp init/mazi-portal /etc/init.d/mazi-portal
+   update-rc.d mazi-portal enable
 
 Execution
 ---------
 
 .. code-block:: bash
 
-   ruby -I lib -I database mazi_portal_server.rb
+   service mazi-portal start
 
 Update
 -------
