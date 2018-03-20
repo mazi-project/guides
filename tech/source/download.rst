@@ -11,7 +11,13 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |2.3|   |  New Features, Bug fixes | Major update of the monitoring framework, New Guestbook admin functionalities, Fix Guestbook error reporting,     | Recommended for all new installs |
+| |2.4.1| |  New Features, Bug fixes | Update Etherpad to latest version (1.6.3), install ep_comments_page plugin for commenting in pads,                | Recommended for all new installs |
+|         |                          | update Nextcloud to latest version (13), install app for external storage, create QR Code button, fix english flag|                                  |
+|         |                          | , merge admin settings in one menu, configure max file size from admin settings, fix captive portal issue in MAC  |                                  |
+|         |                          | devices, fix notification bug, fix multiple issues in sensor backend, typo fixes, monitoring map in user interface|                                  |
+|         |                          | , new service for the rest interface                                                                              |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.3|   |  New Features, Bug fixes | Major update of the monitoring framework, New Guestbook admin functionalities, Fix Guestbook error reporting,     | Major Update                     |
 |         |                          | New expand filesystem to SD button, full Sensehat support in Portal (gyroscope, accelerometer, compass, pressure),|                                  |
 |         |                          | wrong db in sensor user interface bug fix, fix several other bugs                                                 |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
@@ -61,6 +67,9 @@ The procedure of loading an image on a SD card is straightforward and described 
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 
+.. |2.4.1| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.4.1.zip" target="_blank">2.4.1</a>
 
 .. |2.3| raw:: html
 
