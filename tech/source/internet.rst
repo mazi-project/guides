@@ -109,6 +109,23 @@ When you finish, please save the iptables rules with this command
    
    sudo iptables-save | sudo tee /etc/iptables/rules.v4
 
+
+Start everything at boot
+------------------------
+
+Add the following lines of code to the rc.local file before exit 0
+
+.. code-block:: bash
+
+   sudo nano /etc/rc.local
+
+The code which you will import to the rc.local file
+
+.. code-block:: bash
+
+   echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
+
+
 MAZI backend
 ------------
 
@@ -132,22 +149,4 @@ Examples of mazi-internet.sh usage:
 .. code-block:: bash
 
    sudo sh internet.sh -m online
-
-
-Start everything at boot
-------------------------
-
-Add the following lines of code to the rc.local file before exit 0
-
-.. code-block:: bash
-
-   sudo nano /etc/rc.local
-
-The code which you will import to the rc.local file
-
-.. code-block:: bash
-
-   echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
-
-
 

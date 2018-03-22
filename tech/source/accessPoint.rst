@@ -99,6 +99,9 @@ add these lines of code:
    wpa_ptk_rekey=600
    macaddr_acl=0
 
+.. caution::
+
+   You should change the ssid and wpa_passphrase to your preferences
 
 .. note::
 
@@ -144,10 +147,7 @@ The code which you will import to the rc.local file
 .. code-block:: bash
 
    /sbin/ifconfig wlan0 10.0.0.1
-   sudo ifdown wlan0
-   sleep 1
-   hostapd -B /etc/hostapd/hostapd.conf
-   sudo ifconfig wlan0 10.0.0.1
+   sh /root/back-end/wifiap.sh
 
 MAZI backend
 ------------
@@ -181,6 +181,12 @@ Examples:
 .. code-block:: bash
 
    sudo sh mazi-wifiap.sh -p pass
+
+* You can simply start (or restart the Wi-Fi Access Point if it is already started) without passing any argument
+
+.. code-block:: bash
+
+   sudo sh mazi-wifiap.sh
 
 mazi-antenna.sh
 ^^^^^^^^^^^^^^^^
