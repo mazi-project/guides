@@ -46,6 +46,9 @@ Installation
    cp init/mazi-portal /etc/init.d/mazi-portal
    chmod +x /etc/init.d/mazi-portal
    update-rc.d mazi-portal enable
+   cp init/mazi-rest /etc/init.d/mazi-rest
+   chmod +x /etc/init.d/mazi-rest
+   update-rc.d mazi-rest enable
 
 Execution
 ---------
