@@ -22,6 +22,7 @@ Install the following requirements:
 	pip install speedtest-cli
 	apt-get install sshpass
 	apt-get install jq 
+	apt-get install sqlite3
  
 In order to install the MAZI Backend, you have to clone the repository in your |raspbian| Operating System.
 

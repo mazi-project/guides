@@ -86,6 +86,14 @@ A novice MAZI toolkit owner can simply download a ready-to-go SD card image and 
    
    portal
 
+.. MAZI Data Collection Service
+  -----------------------------
+.. toctree::
+   :maxdepth: 1
+   
+   data_collection
+
+
 .. Sensors
     -------
 .. toctree::

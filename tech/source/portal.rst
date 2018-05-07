@@ -35,17 +35,34 @@ Make sure you have cloned the MAZI backend repository (:ref:`backend`).
 Installation
 ------------
 
+Clone the repository 
+
 .. code-block:: bash
 
    sudo su
    cd /root
    git clone https://github.com/mazi-project/portal.git
+
+Prepare the database
+
+.. code-block:: bash
+
    cd portal
    rake init
    rake db:migrate
+
+Create and enable the service for the portal
+
+.. code-block:: bash
+
    cp init/mazi-portal /etc/init.d/mazi-portal
    chmod +x /etc/init.d/mazi-portal
    update-rc.d mazi-portal enable
+
+Create and enable the service for the data collection framework
+
+.. code-block:: bash
+
    cp init/mazi-rest /etc/init.d/mazi-rest
    chmod +x /etc/init.d/mazi-rest
    update-rc.d mazi-rest enable
@@ -53,9 +70,12 @@ Installation
 Execution
 ---------
 
+Both services should be running
+
 .. code-block:: bash
 
    service mazi-portal start
+   service mazi-rest start
 
 Update
 -------

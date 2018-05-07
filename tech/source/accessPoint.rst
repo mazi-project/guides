@@ -105,7 +105,7 @@ add these lines of code:
 
 .. note::
 
-   In case you want a access point without password  add a # in front of all the lines starting with wpa
+   In case you want an access point without password  add a # in front of all the lines starting with wpa
 
 
 Start the access point by running hostapd
