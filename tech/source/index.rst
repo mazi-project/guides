@@ -8,7 +8,7 @@ Welcome to mazi-guides!
 
 This tutorial aims at helping advanced MAZI toolkit owners to understand and make by themselves various software/network configurations in order to deploy a MAZI Zone.
 
-A novice MAZI toolkit owner can simply download a ready-to-go SD card image and deploy a MAZI Zone.
+A novice MAZI toolkit owner can simply :ref:`download` and deploy a MAZI Zone.
 
 
 .. What you will need 

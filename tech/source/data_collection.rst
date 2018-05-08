@@ -11,7 +11,7 @@ It can be installed either together with the MAZI Portal or as a standalone soft
 Install together with the MAZI Portal
 --------------------------------------
 
-You can follow the (:ref:`portal`) section to install the data collection framework alongside with the MAZI Portal.
+You can follow the :ref:`portal` section to install the data collection framework alongside with the MAZI Portal.
 
 
 Install as a standalone service
@@ -43,8 +43,6 @@ Create and enable the service for the data collection framework
 
 Execution
 ^^^^^^^^^^
-
-Both services should be running
 
 .. code-block:: bash
 

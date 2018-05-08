@@ -23,20 +23,20 @@ Examples of *mazi-sense.sh* usage:
 
 .. code-block:: bash
 
-   sudo sh mazi-sense.sh -n sensehat -d 10 -i 2
+   sudo bash mazi-sense.sh -n sensehat -d 10 -i 2
 
 * Display the status of the sensehat module
 
 .. code-block:: bash
 
-   sudo sh mazi-sense.sh -n sensehat -a
+   sudo bash mazi-sense.sh -n sensehat -a
 
 
 * Take measurements from sensehat each 2 seconds for the next 10 seconds and store them in the database
 
 .. code-block:: bash
 
-   sudo sh mazi-sense.sh -n sensehat -d 10 -i 2 -s
+   sudo bash mazi-sense.sh -n sensehat -d 10 -i 2 -s
 
 Sht11
 -----
