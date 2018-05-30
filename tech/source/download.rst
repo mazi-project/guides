@@ -11,9 +11,15 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.4.6| |  New Features            | Fix bugs in setup page and in monitoring page                                                                     | Recommended for all new installs |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+|  2.4.5  |  New Features, Bug fixes | Improved performance in monitoring map, fix sensor tab showing data from multiple sensors, update fontawesome,    |                                  |
+|         |                          | edit colors and icon in applications tab, new tab in setup page for MAZI Zone details, improved functionality in  |                                  |
+|         |                          | monitoring tab, new update system, create custom application button, other bug fixes and typos                    | Major Update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |2.4.4| |  New Features            | Data Collection Framework                                                                                         | Update                           |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |2.4.1| |  New Features, Bug fixes | Update Etherpad to latest version (1.6.3), install ep_comments_page plugin for commenting in pads,                | Recommended for all new installs |
+| |2.4.1| |  New Features, Bug fixes | Update Etherpad to latest version (1.6.3), install ep_comments_page plugin for commenting in pads,                | Major Update                     |
 |         |                          | update Nextcloud to latest version (13), install app for external storage, create QR Code button, fix english flag|                                  |
 |         |                          | , merge admin settings in one menu, configure max file size from admin settings, fix captive portal issue in MAC  |                                  |
 |         |                          | devices, fix notification bug, fix multiple issues in sensor backend, typo fixes, monitoring map in user interface|                                  |
@@ -68,6 +74,10 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+.. |2.4.6| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.4.6.zip" target="_blank">2.4.6</a>
 
 
 .. |2.4.4| raw:: html
