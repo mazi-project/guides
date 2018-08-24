@@ -11,7 +11,22 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |2.4.6| |  New Features            | Fix bugs in setup page and in monitoring page                                                                     | Recommended for all new installs |
+| 2.5.4   | New Features, Bug fixes  | New captive portal functionality with dynamic captive page and improved user experience, Sorting of applications  |                                  |
+|         |                          | in the admin interface, Fix bugs regarding application icons, Fix bug in Firefox when start sensing, Content      |                                  |
+|         |                          | snapshot for Etherpad, Nextcloud, Wordpress, Overall snapshot export/import to external USB drive, Loading        |                                  |
+|         |                          | message when browsing in the Portal, Other typos and bug fixes                                                    | Development channel              |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.5.3| | Bug fixes                | Selecting app instance icon is not obligatory, fix splash page button (bug in Firefox), fix ports                 | Stable,                          |
+|         |                          |                                                                                                                   | Recommended for all new installs |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.5.2| | New Features, Bug fixes  | Two update channels (stable/Dev), fix open ports bug                                                              | Stable, Major Update             |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.1   | Bug fixes                | Bug fixes for nodogsplash                                                                                         | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5     | New Features             | Nodogsplash, new organization in admin Network tab, location setup at MAZI Zone description is not mandatory,     |                                  |
+|         |                          | visual fixes and typo fixes                                                                                       | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.4.6| | Bug fixes                | Fix bugs in setup page and in monitoring page                                                                     | Major Update                     |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 |  2.4.5  |  New Features, Bug fixes | Improved performance in monitoring map, fix sensor tab showing data from multiple sensors, update fontawesome,    |                                  |
 |         |                          | edit colors and icon in applications tab, new tab in setup page for MAZI Zone details, improved functionality in  |                                  |
@@ -74,6 +89,14 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+.. |2.5.3| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.5.3.zip" target="_blank">2.5.3</a>
+
+.. |2.5.2| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.5.2.zip" target="_blank">2.5.2</a>
 
 .. |2.4.6| raw:: html
 
