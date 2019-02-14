@@ -190,6 +190,12 @@ Copy and paste the following into your file:
 Nextcloud
 ^^^^^^^^^
 
+You can refer to the official |nc_doc| for the installation procedure.
+
+.. |nc_doc| raw:: html
+
+        <a href="https://docs.nextcloud.com/server/15/admin_manual/contents.html" target="_blank">Nextcloud documentation</a>
+
 
 Guestbook
 ^^^^^^^^^
@@ -212,7 +218,7 @@ Download Guestbook
 
 	cd /var/www/html
 	sudo git clone https://github.com/mazi-project/mazi-board.git
-	cd /mazi-board/src/node
+	cd mazi-board/src/node
 	sudo npm install
 	sudo npm install pm2 -g
 	cp config.default.js  config.js
@@ -246,17 +252,21 @@ Copy and paste the following into your file:
 	# Description:       Service script which start mazi-board at boot time
 	### END INIT INFO
 
-
+	start(){
+	    cd /var/www/html/mazi-board/src/node/
+	    sudo pm2 start main.config.js
+	}
+	stop(){
+	    cd /var/www/html/mazi-board/src/node/
+	    sudo pm2 stop guestbook-back-end
+	}
 
 	case "$1" in
 	  start)
-		cd /var/www/html/mazi-board/src/node/
-	        sudo pm2 start main.config.js
-
+		start
 		;;
 	  stop)
-		cd /var/www/html/mazi-board/src/node/
-	        sudo pm2 stop guestbook-back-end
+		stop
 		;;
 	  restart)
 		stop
@@ -280,11 +290,97 @@ Copy and paste the following into your file:
 
 Wordpress
 ^^^^^^^^^
+You can refer to the official |wordpress_doc| for the installation procedure.
+
+.. |wordpress_doc| raw:: html
+
+        <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank">Wordpress documentation</a>
 
 
 Interview Archive
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+Download Interview Archive
+
+.. code-block:: bash
+
+        cd /var/www/html
+        sudo git clone https://github.com/mazi-project/archive.git
+        cd mazi-princess/src/server/node
+        sudo npm install
+        sudo npm install pm2 -g
+        cp config.default.js  config.js
+
+Start Interview Archive
+
+.. code-block:: bash
+
+        sudo pm2 start main.js
+
+
+Configure Interview Archive to run at boot time
+
+.. code-block:: bash
+
+        sudo nano /etc/init.d/mazi-princess
+
+Copy and paste the following into your file:
+
+.. code-block:: bash
+
+
+	#!/bin/sh
+
+	### BEGIN INIT INFO
+	# Provides:          interview
+	# Required-Start:    $local_fs $remote_fs $network $syslog
+	# Required-Stop:     $local_fs $remote_fs $network $syslog
+	# Default-Start:     2 3 4 5
+	# Default-Stop:      0 1 6
+	# Short-Description: Starts main.js script
+	# Description:       Service script which starts interview app at boot time
+	### END INIT INFO
+
+	start(){
+        	cd /var/www/html/mazi-princess/src/server/node/
+	        pm2 start main.js
+	}
+	stop(){
+	       cd /var/www/html/mazi-princess/src/server/node/
+	       pm2 stop main.js
+	}
+
+	case "$1" in
+	  start)
+	        start
+	        ;;
+	  stop)
+	        stop
+	        ;;
+	  restart)
+	        stop
+	        start
+	        ;;
+	  *)
+        	echo $"Usage: $0 {start|stop|restart}"
+	        exit 1
+	esac
+	exit 0
+
+
+.. code-block:: bash
+
+	sudo chmod +x /etc/init.d/mazi-princess
+	sudo update-rc.d mazi-princess defaults
+	sudo service mazi-princess start
+
 
 
 Limesurvey
-^^^^^^^^^
+^^^^^^^^^^^^^
+You can refer to the official |lime_doc| for the installation procedure.
+
+
+.. |lime_doc| raw:: html
+
+        <a href="https://manual.limesurvey.org/Installation_-_LimeSurvey_CE" target="_blank">Limesurvey documentation</a>
+

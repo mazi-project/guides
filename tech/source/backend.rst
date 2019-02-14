@@ -23,8 +23,10 @@ Install the following requirements:
 	apt-get install sshpass
 	apt-get install jq 
 	apt-get install sqlite3
+	apt-get install batctl
+	echo "batman-adv" >> /etc/modules
  
-In order to install the MAZI Backend, you have to clone the repository in your |raspbian| Operating System.
+In order to install the MAZI Backend, you have to clone the repository in your |raspbian| Stretch Lite Operating System.
 
 .. |raspbian| raw:: html
 

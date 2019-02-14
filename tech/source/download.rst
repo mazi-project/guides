@@ -11,6 +11,28 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |3.0.3| | New Features, bug fixes  | Mesh functionality in portal, managed mode in portal, update jquery to 3.3.1, fix connection to SSID with space	 | Development channel              |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 3.0.2   | New features, Security   | Includes the MAZI Wiki in the Admin interface, removes key from root authorized_keys, stopping an application     | Stable, recommended for all      |
+|         | fixes, Bug fixes         | disables relevant app instances, other visual fixes                                                               | new installs                     |	
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |3.0.1| | Bug fixes                | Check Internet connection in Dashboard before attempting to check version (improves speed), english message       | Stable                           |
+|         |                          | correction	                                                                                                 |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |3.0|   | New Features             | Based on Raspbian stretch, all applications have been updated to their latest stable release, background          | Dev channel                      |
+|         |                          | monitoring of Internet connectivity, new languages added (French, Arabic, Turkish, Chinese), update Font Awesome  |                                  |
+|         |                          | to 5.5.0, show selected image in Guestbook conf	                                                                 |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.6|   | New Features, Bug Fixes  | Fix bugs in export/import procedure of the entire mazizone, fix bugs in export/import procedure of Guestbook,     | Stable, Major update             |
+|         |                          | check user's input for domain url, allowing only valid domains (not special characters, enough dots etc.),        |                                  |
+|         |                          | addition of a message informing the user that this is the last jessie image supported and he/she needs            |                                  |
+|         |                          | to migrate to v3 images	                                                                                         |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.6   | Bug fixes                | Fix bug regarding custom domain URL which crashes the captive portal                                              | Stable, Major Update             |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.5   | Bug Fixes                | Show enabled instances in default splash page, Add more clients in dnsmasq config file,                           | Stable, Major Update             |
+|         |                          | Fix bug in Guestbook snapshot                                                                                     |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | 2.5.4   | New Features, Bug fixes  | New captive portal functionality with dynamic captive page and improved user experience, Sorting of applications  |                                  |
 |         |                          | in the admin interface, Fix bugs regarding application icons, Fix bug in Firefox when start sensing, Content      |                                  |
 |         |                          | snapshot for Etherpad, Nextcloud, Wordpress, Overall snapshot export/import to external USB drive, Loading        |                                  |
@@ -89,6 +111,22 @@ The procedure of loading an image on a SD card is straightforward and described 
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+.. |3.0.3| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v3.0.3.zip" target="_blank">3.0.3</a>
+
+.. |3.0.1| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v3.0.1.zip" target="_blank">3.0.1</a>
+
+.. |3.0| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v3.0.zip" target="_blank">3.0</a>
+
+.. |2.6| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.6.zip" target="_blank">2.6</a>
 
 .. |2.5.3| raw:: html
 
