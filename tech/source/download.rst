@@ -11,7 +11,58 @@ The procedure of loading an image on a SD card is straightforward and described 
 +=========+==========================+===================================================================================================================+==================================+
 | Release | Type                     | What's new                                                                                                        | Notes                            |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
-| |2.3|   |  New Features, Bug fixes | Major update of the monitoring framework, New Guestbook admin functionalities, Fix Guestbook error reporting,     | Recommended for all new installs |
+| |3.0.3| | New Features, bug fixes  | Mesh functionality in portal, managed mode in portal, update jquery to 3.3.1, fix connection to SSID with space	 | Development channel              |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 3.0.2   | New features, Security   | Includes the MAZI Wiki in the Admin interface, removes key from root authorized_keys, stopping an application     | Stable, recommended for all      |
+|         | fixes, Bug fixes         | disables relevant app instances, other visual fixes                                                               | new installs                     |	
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |3.0.1| | Bug fixes                | Check Internet connection in Dashboard before attempting to check version (improves speed), english message       | Stable                           |
+|         |                          | correction	                                                                                                 |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |3.0|   | New Features             | Based on Raspbian stretch, all applications have been updated to their latest stable release, background          | Dev channel                      |
+|         |                          | monitoring of Internet connectivity, new languages added (French, Arabic, Turkish, Chinese), update Font Awesome  |                                  |
+|         |                          | to 5.5.0, show selected image in Guestbook conf	                                                                 |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.6|   | New Features, Bug Fixes  | Fix bugs in export/import procedure of the entire mazizone, fix bugs in export/import procedure of Guestbook,     | Stable, Major update             |
+|         |                          | check user's input for domain url, allowing only valid domains (not special characters, enough dots etc.),        |                                  |
+|         |                          | addition of a message informing the user that this is the last jessie image supported and he/she needs            |                                  |
+|         |                          | to migrate to v3 images	                                                                                         |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.6   | Bug fixes                | Fix bug regarding custom domain URL which crashes the captive portal                                              | Stable, Major Update             |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.5   | Bug Fixes                | Show enabled instances in default splash page, Add more clients in dnsmasq config file,                           | Stable, Major Update             |
+|         |                          | Fix bug in Guestbook snapshot                                                                                     |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.4   | New Features, Bug fixes  | New captive portal functionality with dynamic captive page and improved user experience, Sorting of applications  |                                  |
+|         |                          | in the admin interface, Fix bugs regarding application icons, Fix bug in Firefox when start sensing, Content      |                                  |
+|         |                          | snapshot for Etherpad, Nextcloud, Wordpress, Overall snapshot export/import to external USB drive, Loading        |                                  |
+|         |                          | message when browsing in the Portal, Other typos and bug fixes                                                    | Development channel              |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.5.3| | Bug fixes                | Selecting app instance icon is not obligatory, fix splash page button (bug in Firefox), fix ports                 | Stable,                          |
+|         |                          |                                                                                                                   | Recommended for all new installs |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.5.2| | New Features, Bug fixes  | Two update channels (stable/Dev), fix open ports bug                                                              | Stable, Major Update             |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5.1   | Bug fixes                | Bug fixes for nodogsplash                                                                                         | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| 2.5     | New Features             | Nodogsplash, new organization in admin Network tab, location setup at MAZI Zone description is not mandatory,     |                                  |
+|         |                          | visual fixes and typo fixes                                                                                       | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.4.6| | Bug fixes                | Fix bugs in setup page and in monitoring page                                                                     | Major Update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+|  2.4.5  |  New Features, Bug fixes | Improved performance in monitoring map, fix sensor tab showing data from multiple sensors, update fontawesome,    |                                  |
+|         |                          | edit colors and icon in applications tab, new tab in setup page for MAZI Zone details, improved functionality in  |                                  |
+|         |                          | monitoring tab, new update system, create custom application button, other bug fixes and typos                    | Major Update                     |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.4.4| |  New Features            | Data Collection Framework                                                                                         | Update                           |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.4.1| |  New Features, Bug fixes | Update Etherpad to latest version (1.6.3), install ep_comments_page plugin for commenting in pads,                | Major Update                     |
+|         |                          | update Nextcloud to latest version (13), install app for external storage, create QR Code button, fix english flag|                                  |
+|         |                          | , merge admin settings in one menu, configure max file size from admin settings, fix captive portal issue in MAC  |                                  |
+|         |                          | devices, fix notification bug, fix multiple issues in sensor backend, typo fixes, monitoring map in user interface|                                  |
+|         |                          | , new service for the rest interface                                                                              |                                  |
++---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| |2.3|   |  New Features, Bug fixes | Major update of the monitoring framework, New Guestbook admin functionalities, Fix Guestbook error reporting,     | Major Update                     |
 |         |                          | New expand filesystem to SD button, full Sensehat support in Portal (gyroscope, accelerometer, compass, pressure),|                                  |
 |         |                          | wrong db in sensor user interface bug fix, fix several other bugs                                                 |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
@@ -61,6 +112,43 @@ The procedure of loading an image on a SD card is straightforward and described 
 | |1.5|   | First Public Release     |                                                                                                                   |                                  |
 +---------+--------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
 
+.. |3.0.3| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v3.0.3.zip" target="_blank">3.0.3</a>
+
+.. |3.0.1| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v3.0.1.zip" target="_blank">3.0.1</a>
+
+.. |3.0| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v3.0.zip" target="_blank">3.0</a>
+
+.. |2.6| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.6.zip" target="_blank">2.6</a>
+
+.. |2.5.3| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.5.3.zip" target="_blank">2.5.3</a>
+
+.. |2.5.2| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.5.2.zip" target="_blank">2.5.2</a>
+
+.. |2.4.6| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.4.6.zip" target="_blank">2.4.6</a>
+
+
+.. |2.4.4| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.4.4.zip" target="_blank">2.4.4</a>
+
+
+.. |2.4.1| raw:: html
+
+	<a href="http://nitlab.inf.uth.gr/mazi-img/mazizone-v2.4.1.zip" target="_blank">2.4.1</a>
 
 .. |2.3| raw:: html
 

@@ -8,20 +8,18 @@ Welcome to mazi-guides!
 
 This tutorial aims at helping advanced MAZI toolkit owners to understand and make by themselves various software/network configurations in order to deploy a MAZI Zone.
 
-Moreover, a novice MAZI toolkit owner can simply download a ready-to-go SD card image and deploy a MAZI Zone.
+A novice MAZI toolkit owner can simply :ref:`download` and deploy a MAZI Zone.
 
 
-What you will need 
-------------------
+.. What you will need 
+   ------------------
 .. toctree::
    :maxdepth: 1
    
    required
  
-Download a MAZI SD card image
------------------------------
-
-In this section, you can find links with SD card images with all the configurations pre-installed.
+.. Download a MAZI SD card image
+   -----------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -29,76 +27,92 @@ In this section, you can find links with SD card images with all the configurati
    download
 
   
-Writing an image to your SD card
----------------------------------         
+.. Writing an image to your SD card
+   ---------------------------------         
 .. toctree::
    :maxdepth: 1
 
    writingSD
 
-Initial setup
--------------
+.. Initial setup
+   -------------
 .. toctree::
    :maxdepth: 1
   
    setup
 
-MAZI Backend
--------------
+.. MAZI Backend
+   -------------
 .. toctree::
    :maxdepth: 1
   
    backend
 
 
-Setting up a Wi-Fi Access Point
--------------------------------
+..  Setting up a Wi-Fi Access Point
+    -------------------------------
 .. toctree::
    :maxdepth: 1
 
    accessPoint
 
 
-Setting up Internet Forwarding
-------------------------------
+..  Setting up Internet Forwarding
+    ------------------------------
 .. toctree::
    :maxdepth: 1
 
    internet
 
-Configuring a Captive Portal
-----------------------------
+..  Configuring a Captive Portal
+    ----------------------------
 .. toctree::
    :maxdepth: 1
    
    captive
 
-MAZI Portal
-----------
+
+..  Applications
+    ------------
+.. toctree::
+    :maxdepth: 1
+
+    apps
+
+.. MAZI Portal
+  ------------
 .. toctree::
    :maxdepth: 1
    
    portal
 
-Sensors
--------
+.. MAZI Data Collection Service
+  -----------------------------
+.. toctree::
+   :maxdepth: 1
+   
+   data_collection
+
+
+.. Sensors
+    -------
 .. toctree::
    :maxdepth: 1
    
    sense
 
-Statistics
------------
+.. Statistics
+    -----------
 .. toctree::
    :maxdepth: 1
    
    stats
 
 
-.. Indices and tables
-.. ==================
+..  Indices and tables
+   ==================
 
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
+..   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`
 

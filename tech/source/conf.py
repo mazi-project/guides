@@ -58,7 +58,7 @@ author = u'MAZI project'
 # built documents.
 #
 # The short X.Y version.
-version = u'2.3'
+version = u'3.1'
 # The full version, including alpha/beta/rc tags.
 #release = u'1.9'
 
@@ -124,7 +124,7 @@ html_theme_path = ["."]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = None
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -157,7 +157,7 @@ html_context = {
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%b %d, %Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -183,10 +183,10 @@ html_context = {
 #html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-html_show_sphinx = False
+html_show_sphinx = True
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-html_show_copyright = False
+html_show_copyright = True
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the

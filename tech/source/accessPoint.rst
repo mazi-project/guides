@@ -45,7 +45,7 @@ We set the range of the IPs that will be assigned to the clients
 
     # ADD THE FOLLOWING LINES
     interface=wlan0
-    dhcp-range=10.0.0.10,10.0.0.200,255.255.255.0,12h
+    dhcp-range=10.0.0.10,10.0.0.240,255.255.255.0,6h
 
 
 Edit the file Hosts
@@ -99,10 +99,13 @@ add these lines of code:
    wpa_ptk_rekey=600
    macaddr_acl=0
 
+.. caution::
+
+   You should change the ssid and wpa_passphrase to your preferences
 
 .. note::
 
-   In case you want a access point without password  add a # in front of all the lines starting with wpa
+   In case you want an access point without password  add a # in front of all the lines starting with wpa
 
 
 Start the access point by running hostapd
@@ -128,6 +131,35 @@ Or run hostapd in the background
    sudo ifdown wlan0
    sudo ifup wlan0
    sudo service dnsmasq restart
+
+Start everything at boot
+------------------------
+
+Add the following lines of code to the rc.local file before exit 0. This is a mechanism to not turn on the WiFi Access Point on boot, unless the installation of dependencies during an update is finished. 
+
+.. code-block:: bash
+
+   sudo nano /etc/rc.local
+
+
+.. code-block:: bash
+
+   FILE="/etc/mazi/update-lock"
+   x=0
+   #### Wait the Update to finish before you setup the Hostapd ####
+   #### timeout in 1800sec=30min  ####
+   while [ $x -lt 1800 ] && [ -e $FILE ]; do
+     x=$((x+1))
+     sleep 1
+   done
+   if [ ! -f $FILE ]
+   then
+   	echo "Update finished"
+   	bash /root/back-end/mazi-wifi.sh start
+   else
+   	echo "Update is not properly finished"
+   fi
+   echo '-------------------------------------------------------'
 
 MAZI backend
 ------------
@@ -161,6 +193,12 @@ Examples:
 .. code-block:: bash
 
    sudo sh mazi-wifiap.sh -p pass
+
+* You can simply start (or restart the Wi-Fi Access Point if it is already started) without passing any argument
+
+.. code-block:: bash
+
+   sudo sh mazi-wifiap.sh
 
 mazi-antenna.sh
 ^^^^^^^^^^^^^^^^
@@ -235,26 +273,4 @@ Examples:
 .. code-block:: bash
 
    sudo sh mazi-router.sh -d
-
-
-Start everything at boot
-------------------------
-
-Add the following lines of code to the rc.local file before exit 0
-
-.. code-block:: bash
-
-   sudo nano /etc/rc.local
-
-
-The code which you will import to the rc.local file 
-
-.. code-block:: bash
-
-   /sbin/ifconfig wlan0 10.0.0.1
-   sudo ifdown wlan0
-   sleep 1
-   hostapd -B /etc/hostapd/hostapd.conf
-   sudo ifconfig wlan0 10.0.0.1
-
 

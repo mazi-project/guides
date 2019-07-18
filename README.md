@@ -14,7 +14,7 @@ This repository depends on [Sphinx]. You should install it first. The source fil
 Use the `Makefile` to automatically rebuild the documentation:
 
 - `make clean` will remove the generated files.
-- `make`       will regenerate the HTML files.
+- `make`       will regenerate the HTML files inside the folder tech/build/.
 
 [Sphinx]: http://www.sphinx-doc.org/en/stable/
 [ReStructuredText]: http://docutils.sourceforge.net/rst.html
