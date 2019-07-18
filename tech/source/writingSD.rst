@@ -5,7 +5,7 @@ Writing an image to the microSD card
 
 In this section you can find information on how to write an image to your microSD card. 
 The image could be a default Raspbian operating system if you are starting from scratch to build your MAZI Zone, or a |mazi-img| if you want to have full support and
-receive the latest developments of the project.
+receive the latest developments of the project. The latest version of the MAZI toolkit (v3) uses the **Raspbian Stretch Lite**.
 
 .. |mazi-img| raw:: html
 
